@@ -1,0 +1,517 @@
+{
+    "maps": [
+        {
+            "fileName": "p051.tmx",
+            "height": 176,
+            "width": 160,
+            "x": 0,
+            "y": 528
+        },
+        {
+            "fileName": "p052.tmx",
+            "height": 176,
+            "width": 160,
+            "x": 160,
+            "y": 528
+        },
+        {
+            "fileName": "p053.tmx",
+            "height": 176,
+            "width": 160,
+            "x": 320,
+            "y": 528
+        },
+        {
+            "fileName": "p036.tmx",
+            "height": 176,
+            "width": 160,
+            "x": 320,
+            "y": 352
+        },
+        {
+            "fileName": "p019.tmx",
+            "height": 176,
+            "width": 160,
+            "x": 320,
+            "y": 176
+        },
+        {
+            "fileName": "p070.tmx",
+            "height": 176,
+            "width": 160,
+            "x": 320,
+            "y": 704
+        },
+        {
+            "fileName": "p087.tmx",
+            "height": 176,
+            "width": 160,
+            "x": 320,
+            "y": 880
+        },
+        {
+            "fileName": "p088.tmx",
+            "height": 176,
+            "width": 160,
+            "x": 480,
+            "y": 880
+        },
+        {
+            "fileName": "p089.tmx",
+            "height": 176,
+            "width": 160,
+            "x": 640,
+            "y": 880
+        },
+        {
+            "fileName": "p090.tmx",
+            "height": 176,
+            "width": 160,
+            "x": 800,
+            "y": 880
+        },
+        {
+            "fileName": "p091.tmx",
+            "height": 176,
+            "width": 160,
+            "x": 960,
+            "y": 880
+        },
+        {
+            "fileName": "p073.tmx",
+            "height": 176,
+            "width": 160,
+            "x": 800,
+            "y": 704
+        },
+        {
+            "fileName": "p056.tmx",
+            "height": 176,
+            "width": 160,
+            "x": 800,
+            "y": 528
+        },
+        {
+            "fileName": "p039.tmx",
+            "height": 176,
+            "width": 160,
+            "x": 800,
+            "y": 352
+        },
+        {
+            "fileName": "p040.tmx",
+            "height": 176,
+            "width": 160,
+            "x": 960,
+            "y": 352
+        },
+        {
+            "fileName": "p041.tmx",
+            "height": 176,
+            "width": 160,
+            "x": 1120,
+            "y": 352
+        },
+        {
+            "fileName": "p024.tmx",
+            "height": 176,
+            "width": 160,
+            "x": 1120,
+            "y": 176
+        },
+        {
+            "fileName": "p007.tmx",
+            "height": 176,
+            "width": 160,
+            "x": 1120,
+            "y": 0
+        },
+        {
+            "fileName": "p058.tmx",
+            "height": 176,
+            "width": 160,
+            "x": 1120,
+            "y": 528
+        },
+        {
+            "fileName": "p059.tmx",
+            "height": 176,
+            "width": 160,
+            "x": 1280,
+            "y": 528
+        },
+        {
+            "fileName": "p060.tmx",
+            "height": 176,
+            "width": 160,
+            "x": 1440,
+            "y": 528
+        },
+        {
+            "fileName": "p061.tmx",
+            "height": 176,
+            "width": 160,
+            "x": 1600,
+            "y": 528
+        },
+        {
+            "fileName": "p062.tmx",
+            "height": 176,
+            "width": 160,
+            "x": 1760,
+            "y": 528
+        },
+        {
+            "fileName": "p044.tmx",
+            "height": 176,
+            "width": 160,
+            "x": 1600,
+            "y": 352
+        },
+        {
+            "fileName": "p027.tmx",
+            "height": 176,
+            "width": 160,
+            "x": 1600,
+            "y": 176
+        },
+        {
+            "fileName": "p026.tmx",
+            "height": 176,
+            "width": 160,
+            "x": 1440,
+            "y": 176
+        },
+        {
+            "fileName": "p028.tmx",
+            "height": 176,
+            "width": 160,
+            "x": 1760,
+            "y": 176
+        },
+        {
+            "fileName": "p011.tmx",
+            "height": 176,
+            "width": 160,
+            "x": 1760,
+            "y": 0
+        },
+        {
+            "fileName": "p012.tmx",
+            "height": 176,
+            "width": 160,
+            "x": 1920,
+            "y": 0
+        },
+        {
+            "fileName": "p013.tmx",
+            "height": 176,
+            "width": 160,
+            "x": 2080,
+            "y": 0
+        },
+        {
+            "fileName": "p079.tmx",
+            "height": 176,
+            "width": 160,
+            "x": 1760,
+            "y": 704
+        },
+        {
+            "fileName": "p096.tmx",
+            "height": 176,
+            "width": 160,
+            "x": 1760,
+            "y": 880
+        },
+        {
+            "fileName": "p113.tmx",
+            "height": 176,
+            "width": 160,
+            "x": 1760,
+            "y": 1056
+        },
+        {
+            "fileName": "p130.tmx",
+            "height": 176,
+            "width": 160,
+            "x": 1760,
+            "y": 1232
+        },
+        {
+            "fileName": "p131.tmx",
+            "height": 176,
+            "width": 160,
+            "x": 1920,
+            "y": 1232
+        },
+        {
+            "fileName": "p148.tmx",
+            "height": 176,
+            "width": 160,
+            "x": 1920,
+            "y": 1408
+        },
+        {
+            "fileName": "p149.tmx",
+            "height": 176,
+            "width": 160,
+            "x": 2080,
+            "y": 1408
+        },
+        {
+            "fileName": "p166.tmx",
+            "height": 176,
+            "width": 160,
+            "x": 2080,
+            "y": 1584
+        },
+        {
+            "fileName": "p167.tmx",
+            "height": 176,
+            "width": 160,
+            "x": 2240,
+            "y": 1584
+        },
+        {
+            "fileName": "p094.tmx",
+            "height": 176,
+            "width": 160,
+            "x": 1440,
+            "y": 880
+        },
+        {
+            "fileName": "p095.tmx",
+            "height": 176,
+            "width": 160,
+            "x": 1600,
+            "y": 880
+        },
+        {
+            "fileName": "p097.tmx",
+            "height": 176,
+            "width": 160,
+            "x": 1920,
+            "y": 880
+        },
+        {
+            "fileName": "p098.tmx",
+            "height": 176,
+            "width": 160,
+            "x": 2080,
+            "y": 880
+        },
+        {
+            "fileName": "p099.tmx",
+            "height": 176,
+            "width": 160,
+            "x": 2240,
+            "y": 880
+        },
+        {
+            "fileName": "p100.tmx",
+            "height": 176,
+            "width": 160,
+            "x": 2400,
+            "y": 880
+        },
+        {
+            "fileName": "p101.tmx",
+            "height": 176,
+            "width": 160,
+            "x": 2560,
+            "y": 880
+        },
+        {
+            "fileName": "p081.tmx",
+            "height": 176,
+            "width": 160,
+            "x": 2080,
+            "y": 704
+        },
+        {
+            "fileName": "p083.tmx",
+            "height": 176,
+            "width": 160,
+            "x": 2400,
+            "y": 704
+        },
+        {
+            "fileName": "p117.tmx",
+            "height": 176,
+            "width": 160,
+            "x": 2400,
+            "y": 1056
+        },
+        {
+            "fileName": "p106.tmx",
+            "height": 176,
+            "width": 160,
+            "x": 640,
+            "y": 1056
+        },
+        {
+            "fileName": "p123.tmx",
+            "height": 176,
+            "width": 160,
+            "x": 640,
+            "y": 1232
+        },
+        {
+            "fileName": "p140.tmx",
+            "height": 176,
+            "width": 160,
+            "x": 640,
+            "y": 1408
+        },
+        {
+            "fileName": "p122.tmx",
+            "height": 176,
+            "width": 160,
+            "x": 480,
+            "y": 1232
+        },
+        {
+            "fileName": "p121.tmx",
+            "height": 176,
+            "width": 160,
+            "x": 320,
+            "y": 1232
+        },
+        {
+            "fileName": "p138.tmx",
+            "height": 176,
+            "width": 160,
+            "x": 320,
+            "y": 1408
+        },
+        {
+            "fileName": "p137.tmx",
+            "height": 176,
+            "width": 160,
+            "x": 160,
+            "y": 1408
+        },
+        {
+            "fileName": "p136.tmx",
+            "height": 176,
+            "width": 160,
+            "x": 0,
+            "y": 1408
+        },
+        {
+            "fileName": "p141.tmx",
+            "height": 176,
+            "width": 160,
+            "x": 800,
+            "y": 1408
+        },
+        {
+            "fileName": "p142.tmx",
+            "height": 176,
+            "width": 160,
+            "x": 960,
+            "y": 1408
+        },
+        {
+            "fileName": "p143.tmx",
+            "height": 176,
+            "width": 160,
+            "x": 1120,
+            "y": 1408
+        },
+        {
+            "fileName": "p126.tmx",
+            "height": 176,
+            "width": 160,
+            "x": 1120,
+            "y": 1232
+        },
+        {
+            "fileName": "p127.tmx",
+            "height": 176,
+            "width": 160,
+            "x": 1280,
+            "y": 1232
+        },
+        {
+            "fileName": "p128.tmx",
+            "height": 176,
+            "width": 160,
+            "x": 1440,
+            "y": 1232
+        },
+        {
+            "fileName": "p160.tmx",
+            "height": 176,
+            "width": 160,
+            "x": 1120,
+            "y": 1584
+        },
+        {
+            "fileName": "p161.tmx",
+            "height": 176,
+            "width": 160,
+            "x": 1280,
+            "y": 1584
+        },
+        {
+            "fileName": "p162.tmx",
+            "height": 176,
+            "width": 160,
+            "x": 1440,
+            "y": 1584
+        },
+        {
+            "fileName": "p163.tmx",
+            "height": 176,
+            "width": 160,
+            "x": 1600,
+            "y": 1584
+        },
+        {
+            "fileName": "p158.tmx",
+            "height": 176,
+            "width": 160,
+            "x": 800,
+            "y": 1584
+        },
+        {
+            "fileName": "p175.tmx",
+            "height": 176,
+            "width": 160,
+            "x": 800,
+            "y": 1760
+        },
+        {
+            "fileName": "p192.tmx",
+            "height": 176,
+            "width": 160,
+            "x": 800,
+            "y": 1936
+        },
+        {
+            "fileName": "p193.tmx",
+            "height": 176,
+            "width": 160,
+            "x": 960,
+            "y": 1936
+        },
+        {
+            "fileName": "p194.tmx",
+            "height": 176,
+            "width": 160,
+            "x": 1120,
+            "y": 1936
+        },
+        {
+            "fileName": "p195.tmx",
+            "height": 176,
+            "width": 160,
+            "x": 1280,
+            "y": 1936
+        }
+    ],
+    "onlyShowAdjacentMaps": false,
+    "type": "world"
+}
