@@ -117,9 +117,9 @@ DEFB #00, #c0, #80, #00
 Jugador_6:
 DEFB #00, #00, #00, #00
 DEFB #00, #00, #00, #00
-DEFB #00, #ae, #0c, #00
+DEFB #00, #0c, #0c, #00
 DEFB #04, #0c, #5d, #08
-DEFB #0c, #0c, #0c, #0c
+DEFB #0c, #ae, #0c, #0c
 DEFB #ae, #84, #5d, #5d
 DEFB #ae, #ae, #48, #5d
 DEFB #0c, #0c, #0c, #0c

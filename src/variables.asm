@@ -17,16 +17,11 @@ MAPA_TECLADO DS 10   ; Estado de todas las teclas del teclado
 TECLAS_PULSADAS DW 0
 
 ; Puntero a la pantalla actual (comprimida)
-PANTALLA_ACTUAL_COMPRIMIDA DW P051
-PANTALLA_ACTUAL_OBJETOS DW P051_Obj
-PANTALLA_ACTUAL_ENEMIGOS DW P051_Enemigos
-PANTALLA_ACTUAL_INDICE DB 51   ; Numero de pantalla inicial
-PANTALLA_ACTUAL_NUM_ENEMIGOS DB 0 ; Numero de enemigos en pantalla
-PANTALLA_ACTUAL_SALIDA_DERECHA DB 52  ; Pantalla adyacente a la derecha (+1)
-PANTALLA_ACTUAL_SALIDA_IZQUIERDA DB 50   ; Pantalla adyacente a la izquierda (-1)
-PANTALLA_ACTUAL_SALIDA_ARRIBA DB 34   ; Pantalla adyacente por arriba (-17)
-PANTALLA_ACTUAL_SALIDA_ABAJO DB 68    ; Pantalla adyacente por abajo (+17)
-
+PANTALLA_ACTUAL_COMPRIMIDA DW P051     ; Puntero a pantalla inicial (51)
+PANTALLA_ACTUAL_OBJETOS DW 0           ; Puntero a la lista de objetos de la pantalla
+PANTALLA_ACTUAL_ENEMIGOS DW 0          ; Puntero a la lista de enemigos de la pantalla
+PANTALLA_ACTUAL_INDICE DB 51           ; Numero de pantalla inicial
+PANTALLA_ACTUAL_NUM_ENEMIGOS DB 0      ; Numero de enemigos en pantalla
 
 ; Estado de los personajes
 

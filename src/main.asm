@@ -76,11 +76,9 @@ IniciaJuego:
    ; al buffer secundario. Asi los enemigos no
    ; los borran al pasar por encima
 
-   ; TBD ;
-
-   ;;; ld HL, (PANTALLA_ACTUAL_OBJETOS)
-   ;;; call InicializaObjetos
-   ;;; call PintaObjetos
+   ld HL, (PANTALLA_ACTUAL_OBJETOS)
+   call InicializaObjetos
+   call PintaObjetos
 
 
    call PantallaABuffer
