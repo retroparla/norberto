@@ -149,6 +149,28 @@ CalculaPosicion:
       jr NC, CalculaPosicion_NoSalePorArriba
 
       ; Nos salimos de la pantalla por arriba
+      ; Si no hay bloque solido encima nuestro, pasamos
+      ; a la pantalla superior
+      ; En B ya tenemos la posicion X del jugador (esquina izquierda)
+      ; C = 0 para comprobar si hay un bloque solido en (X,0)
+      ld C, 0
+      ld HL, PANTALLA_ACTUAL
+      call BloqueXY     ; A = tipo de tile en esa posicion
+      cp TILES_FONDO    ; Es solido?
+      jr NC, CalculaPosicion_FinSalto     ; Hay techo, acabamos
+      ; Comprobamos tambien en X+3 (esquina derecha del personaje)
+      ; El personaje solo pasa a la pantalla superior si no hay ningun 
+      ; bloque encima suyo, ni siquiera rozandole por los laterales.
+      ld C, 0
+      ld A, (IX+SPRITE_POSX)
+      add A, 3
+      ld B, A
+      ld HL, PANTALLA_ACTUAL
+      call BloqueXY     ; A = tipo de tile en esa posicion
+      cp TILES_FONDO    ; Es solido?
+      jr NC, CalculaPosicion_FinSalto     ; Hay techo, acabamos
+      ; Estamos saltando por un hueco en el techo, pasamos a la pantalla superior
+      ; Comprobamos tambien 
       ld A, CAMBIO_PANTALLA_ARRIBA
       ld (CAMBIO_PANTALLA), A       ; Activamos flag de cambio de pantalla
       ret 
