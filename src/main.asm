@@ -25,14 +25,9 @@ InicioCodigo:
    ld A, &54
    call ColorBorde
 
-   ; Selecciona el jugador 
-   ;call SeleccionPersonaje
-
-   ;call PintaMarcador
-
-    ; Puntuacion del jugador
-    ;ld IX, PLAYER1
-    ;call ActualizaMarcadorP1
+   ; Puntuacion del jugador
+   ld IX, PLAYER1
+   call ActualizaMarcadorP1
 
 ResetJugador:
 
@@ -49,10 +44,6 @@ IniciaJuego:
    di ; Deshabilitamos las interrupciones para poder
       ; cambiar de pantalla sin que se cuele ninguna
       ; entre medias
-
-
-
-
 
 ; LoopText:
 ;    ld D, 10       
@@ -87,7 +78,6 @@ IniciaJuego:
    call InicializaEnemigos
 
 
-
    ; Instalamos nuestra rutina de servicio de interrupciones
    ; justo después del VSync
    call VSync
@@ -97,16 +87,6 @@ IniciaJuego:
    ld HL, Interrupcion0      
    ld (&39), HL      ; 0038 JP Int0
    ei
-
-   ;ld HL, MEM_VIDEO
-   ;ld DE, BUFFER_PANTALLA
-   ;ld BC, &C850
-   ;call PintaBloque
-
-   ;ld HL, BUFFER_PANTALLA
-   ;ld DE, MEM_VIDEO
-   ;call PintaFondo
-
 
 Loop: 
    ; Jugador KO?

@@ -7,8 +7,6 @@ ActualizaMarcadorP1:
     ld E, MARCADOR_P1_Y1
     ld B, MARCADOR_P1_X2
     ld C, MARCADOR_P1_Y2
-    call ActualizaMarcador
-    ret
 
 ; ***********************************************************
 ; ActualizaMarcador: con la puntuacion actual de un jugador
