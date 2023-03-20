@@ -50,7 +50,7 @@ COLOR_BRIGHT_WHITE   EQU &4B
 ; Bits para comprobar teclas pulsadas
 ; sobre MAPA_TECLADO
 ; Fila 0
-KEY_INTRO_MASK       EQU 7
+KEY_INTRO_MASK       EQU 6
 KEY_DOWN_MASK        EQU 2
 KEY_RIGHT_MASK       EQU 1
 KEY_UP_MASK          EQU 0
@@ -61,7 +61,7 @@ KEY_RETURN_MASK      EQU 2
 ; Fila 3
 KEY_P_MASK           EQU 3
 ; Fila 4
-KEY_O_MASK           EQU 1
+KEY_O_MASK           EQU 2
 ; Fila 5
 KEY_SPACE_MASK       EQU 7
 ; Fila 8
@@ -69,7 +69,8 @@ KEY_A_MASK           EQU 5
 KEY_Q_MASK           EQU 3
 KEY_ESC_MASK         EQU 2
 ; Fila 9
-KEY_JOY_FIRE_MASK    EQU 4
+KEY_JOY_FIRE_MASK    EQU 5
+KEY_JOY_FIRE2_MASK   EQU 4
 KEY_JOY_RIGHT_MASK   EQU 3
 KEY_JOY_LEFT_MASK    EQU 2
 KEY_JOY_DOWN_MASK    EQU 1

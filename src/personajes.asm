@@ -31,8 +31,11 @@ CalculaEstado_Izquierda:
       jr Z, CalculaEstado_Salto
       ld A, MOV_IZQUIERDA
 CalculaEstado_Salto:
-      bit KEY_UP, D
+      bit KEY_UP, D     ; Arriba y fuego son equivalentes (salto)
+      jr NZ, CalculaEstado_Saltando
+      bit KEY_FIRE, D
       jr Z, CalculaEstado_Fin
+CalculaEstado_Saltando:
       add A, MOV_SALTO            ; SALTO + PARADO ,SALTO + DERECHA, SALTO + IZQUIERDA
 CalculaEstado_Fin:
       ld (IX+SPRITE_ESTADO), A       ; Guarda el estado en memoria

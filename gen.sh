@@ -32,7 +32,7 @@ echo "Ensamblando todo..."
 cd src
 pasmo main.asm ../juego.bin ../main.symbol
 cd ..
-iDSK.exe juego.dsk -n
-iDSK.exe juego.dsk -i juego.bin -e 100 -c 100 -t 1
+iDSK juego.dsk -n
+iDSK juego.dsk -i juego.bin -e 100 -c 100 -t 1
 
 echo "¡HECHO!"

@@ -12,9 +12,8 @@ PALETA:
 MAPA_TECLADO DS 10   ; Estado de todas las teclas del teclado
 
 ; Estado actual de las teclas pulsadas
-; 2 bytes, uno por cada jugador:
 ; Bits: (MSB) N/A, ENTER, ESC, FIRE, RIGHT, LEFT, DOWN, UP (LSB)
-TECLAS_PULSADAS DW 0
+TECLAS_PULSADAS DB 0
 
 ; Puntero a la pantalla actual (comprimida)
 PANTALLA_ACTUAL_COMPRIMIDA DW P051     ; Puntero a pantalla inicial (51)

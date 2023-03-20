@@ -145,7 +145,8 @@ Interrupcion1:
       ; segun las teclas pulsadas
 
       ; Jugador 1
-      ld DE, (TECLAS_PULSADAS)      ; Jugador 2 en E, Jugador 1 en D
+      ld A, (TECLAS_PULSADAS)
+      ld D, A                       ; Teclas pulsadas en este momento
       ld IX, PLAYER1                ; Datos del JUGADOR 1
       ld A, (IX+SPRITE_ESTADO)      
       ld (IX+SPRITE_ESTADO_PREV), A ; Guardamos el estado antes de actualizarlo
