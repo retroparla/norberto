@@ -25,9 +25,14 @@ InicioCodigo:
    ld A, &54
    call ColorBorde
 
+   ; Textos estaticos del marcador
+   call PintaMarcadorEstatico
+
    ; Puntuacion del jugador
    ld IX, PLAYER1
-   call ActualizaMarcadorP1
+   call ActualizaMarcadorHard
+   call ActualizaMarcadorSoft
+   call ActualizaMarcadorVidas
 
 ResetJugador:
 
@@ -44,14 +49,6 @@ IniciaJuego:
    di ; Deshabilitamos las interrupciones para poder
       ; cambiar de pantalla sin que se cuele ninguna
       ; entre medias
-
-; LoopText:
-;    ld D, 10       
-;    ld E, 30
-;    call CoordenadasVideo
-;    ld BC, TEXTO
-;    call PintaTexto
-;    jr LoopText
 
    ; Guardamos los indices a las pantallas adyacentes a la pantalla actual
    ; Descomprime la pantalla almacenandola en PANTALLA_ACTUAL

@@ -5,29 +5,34 @@ PintaTexto:
    ld A, (BC)     ; Letra en BC
    cp &FF
    ret Z          ; Fin de cadena
+
+   sub 65
+
    push BC
-   ld BC, Fuentetileset ; Puntero a caracteres
-   sub 65         ; Convertimos de ASCII a puntero sobre Fuentetileset
-   ; BC = BC + A*2   ; Movemos puntero al caracter indicado (A*2 porque son words)
-   sla A          ; A = A*2
-   add A, C       ; BC = BC + A, usando add y adc
+   push HL
+   push HL
+
+   ld HL, Fuentetileset
+   ld B, 0
    ld C, A
-   xor A
-   adc A, B
-   ld B, A  
-   ld A, (BC)     ; Sacamos la direccion del grafico de la letra
+   add HL, BC     ; HL = Fueltetileset + A*2
+   add HL, BC
+
+   ld A, (HL)     ; Sacamos la direccion del grafico de la letra
    ld E, A
-   inc BC
-   ld A, (BC)
+   inc HL
+   ld A, (HL)
    ld D, A        ; DE apunta al grafico de la letra
-   push HL        ; Guardamos HL para el siguiente caracter
+
+   pop HL        ;
    ld A, 8        ; Altura de las letras
-   call PintaBloque8Mask
+   call PintaBloque8
+
    pop HL
    pop BC
    inc BC         ; Siguiente letra
    inc HL         ; Posicion en pantalla de la siguiente letra
    inc HL
    inc HL
-   inc HL
+   ;inc HL
    jr PintaTexto

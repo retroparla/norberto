@@ -86,17 +86,71 @@ P044:
 P051:
    INCBIN "../data/p051.bin"
    ; Objetos
-   db 40    ; Posicion X
+
+   db 8    ; Posicion X
+   db 160   ; Posicion Y
+   db 0     ; Tipo de objeto
+
+   db 13    ; Posicion X
    db 160   ; Posicion Y
    db 1     ; Tipo de objeto
+   
+   db 18    ; Posicion X
+   db 160   ; Posicion Y
+   db 2     ; Tipo de objeto
 
-   db 20    ; Posicion X
+   db 23    ; Posicion X
+   db 160   ; Posicion Y
+   db 3     ; Tipo de objeto
+
+   db 28    ; Posicion X
    db 160   ; Posicion Y
    db 5     ; Tipo de objeto
+
+   db 33    ; Posicion X
+   db 160   ; Posicion Y
+   db 4     ; Tipo de objeto
+
+   db 38    ; Posicion X
+   db 160   ; Posicion Y
+   db 6     ; Tipo de objeto
+
+   db 43    ; Posicion X
+   db 160   ; Posicion Y
+   db 7     ; Tipo de objeto
+
+   db 48    ; Posicion X
+   db 160   ; Posicion Y
+   db 8     ; Tipo de objeto
+
+   db 53    ; Posicion X
+   db 160   ; Posicion Y
+   db 9     ; Tipo de objeto
+
+   db 58    ; Posicion X
+   db 160   ; Posicion Y
+   db 10     ; Tipo de objeto
+
+   db 63    ; Posicion X
+   db 160   ; Posicion Y
+   db 12     ; Tipo de objeto
+
+   db 68    ; Posicion X
+   db 160   ; Posicion Y
+   db 13     ; Tipo de objeto
+
+   db 73    ; Posicion X
+   db 160   ; Posicion Y
+   db 14     ; Tipo de objeto
+
+   ; db 78    ; Posicion X
+   ; db 160   ; Posicion Y
+   ; db 14     ; Tipo de objeto
+
    db &FF   ; Fin de la lista de objetos
 
    ; Enemigos
-   db 1     ; Numero de enemigos
+   db 0    ; Numero de enemigos
    db 70    ; Posicion X inicial
    db 152   ; Posicion Y inicial
    db 5     ; Tipo de enemigo (Perro)

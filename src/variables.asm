@@ -22,6 +22,10 @@ PANTALLA_ACTUAL_ENEMIGOS DW 0          ; Puntero a la lista de enemigos de la pa
 PANTALLA_ACTUAL_INDICE DB 51           ; Numero de pantalla inicial
 PANTALLA_ACTUAL_NUM_ENEMIGOS DB 0      ; Numero de enemigos en pantalla
 
+TEXTO_HARD DB "HARD", 101, 101, 101, 102, 92, 91, &FF
+TEXTO_SOFT DB "SOFT", 101, 101, 101, 102, 94, 91, &FF
+TEXTO_X  DB "X", &FF
+
 ; Estado de los personajes
 
 ; Jugador 1

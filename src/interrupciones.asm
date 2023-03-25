@@ -329,7 +329,7 @@ Interrupcion4_MarcadorPlayer1:
       ld A, (IX+SPRITE_ACTUALIZA_MARCADOR)      ; Hace falta actualizar?
       cp 0
       jr Z, Interrupcion4_Fin
-      call ActualizaMarcadorP1
+      call ActualizaMarcadorSoft
       ld (IX+SPRITE_ACTUALIZA_MARCADOR), 0      ; Reset flag
 
 Interrupcion4_Fin:

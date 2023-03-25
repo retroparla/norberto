@@ -213,28 +213,17 @@ DEFB #ff, #ff, #ff, #ff
 
 ;; Tile Tile_19 - 8x8 pixels, 4x8 bytes.
 Tile_19:
-DEFB #15, #44, #15, #44
-DEFB #3f, #6e, #3f, #6e
-DEFB #15, #44, #15, #44
-DEFB #cc, #cc, #cc, #cc
-DEFB #15, #44, #15, #44
-DEFB #3f, #6e, #3f, #6e
-DEFB #15, #44, #15, #44
-DEFB #cc, #cc, #cc, #cc
+DEFB #3c, #3c, #3c, #3c
+DEFB #3c, #3c, #3c, #3c
+DEFB #3c, #3c, #3c, #3c
+DEFB #3c, #3c, #3c, #3c
+DEFB #3c, #3c, #3c, #3c
+DEFB #3c, #3c, #3c, #3c
+DEFB #3c, #3c, #3c, #3c
+DEFB #3c, #3c, #3c, #3c
 
 ;; Tile Tile_20 - 8x8 pixels, 4x8 bytes.
 Tile_20:
-DEFB #0f, #4a, #0f, #4a
-DEFB #85, #c0, #85, #c0
-DEFB #c0, #85, #c0, #85
-DEFB #4a, #0f, #4a, #0f
-DEFB #0f, #4a, #0f, #4a
-DEFB #85, #c0, #85, #c0
-DEFB #c0, #85, #c0, #85
-DEFB #4a, #0f, #4a, #0f
-
-;; Tile Tile_21 - 8x8 pixels, 4x8 bytes.
-Tile_21:
 DEFB #60, #c0, #c0, #30
 DEFB #c0, #c0, #90, #30
 DEFB #c0, #c0, #30, #60
@@ -244,38 +233,49 @@ DEFB #90, #30, #c0, #c0
 DEFB #30, #60, #c0, #c0
 DEFB #30, #c0, #c0, #90
 
+;; Tile Tile_21 - 8x8 pixels, 4x8 bytes.
+Tile_21:
+DEFB #c4, #99, #c4, #99
+DEFB #cc, #99, #cc, #99
+DEFB #cc, #99, #cc, #99
+DEFB #33, #33, #33, #33
+DEFB #c4, #99, #c4, #99
+DEFB #cc, #99, #cc, #99
+DEFB #cc, #99, #cc, #99
+DEFB #33, #33, #33, #33
+
 ;; Tile Tile_22 - 8x8 pixels, 4x8 bytes.
 Tile_22:
-DEFB #c4, #99, #c4, #99
-DEFB #cc, #99, #cc, #99
-DEFB #cc, #99, #cc, #99
-DEFB #33, #33, #33, #33
-DEFB #c4, #99, #c4, #99
-DEFB #cc, #99, #cc, #99
-DEFB #cc, #99, #cc, #99
-DEFB #33, #33, #33, #33
+DEFB #c0, #33, #c0, #33
+DEFB #c0, #33, #c0, #33
+DEFB #33, #c0, #33, #c0
+DEFB #33, #c0, #33, #c0
+DEFB #c0, #33, #c0, #33
+DEFB #c0, #33, #c0, #33
+DEFB #33, #c0, #33, #c0
+DEFB #33, #c0, #33, #c0
 
 ;; Tile Tile_23 - 8x8 pixels, 4x8 bytes.
 Tile_23:
-DEFB #c0, #33, #c0, #33
-DEFB #c0, #33, #c0, #33
-DEFB #33, #c0, #33, #c0
-DEFB #33, #c0, #33, #c0
-DEFB #c0, #33, #c0, #33
-DEFB #c0, #33, #c0, #33
-DEFB #33, #c0, #33, #c0
-DEFB #33, #c0, #33, #c0
+DEFB #15, #44, #15, #44
+DEFB #3f, #6e, #3f, #6e
+DEFB #15, #44, #15, #44
+DEFB #cc, #cc, #cc, #cc
+DEFB #15, #44, #15, #44
+DEFB #3f, #6e, #3f, #6e
+DEFB #15, #44, #15, #44
+DEFB #cc, #cc, #cc, #cc
 
 ;; Tile Tile_24 - 8x8 pixels, 4x8 bytes.
 Tile_24:
-DEFB #ff, #ff, #ff, #ff
-DEFB #ff, #ff, #ff, #ff
-DEFB #ff, #ff, #ff, #ff
-DEFB #ff, #ff, #ff, #ff
-DEFB #ff, #ff, #ff, #ff
-DEFB #ff, #ff, #ff, #ff
-DEFB #ff, #ff, #ff, #ff
-DEFB #ff, #ff, #ff, #ff
+DEFB #0f, #4a, #0f, #4a
+DEFB #85, #c0, #85, #c0
+DEFB #c0, #85, #c0, #85
+DEFB #4a, #0f, #4a, #0f
+DEFB #0f, #4a, #0f, #4a
+DEFB #85, #c0, #85, #c0
+DEFB #c0, #85, #c0, #85
+DEFB #4a, #0f, #4a, #0f
 
 ;; Tile Tile_25 - 8x8 pixels, 4x8 bytes.
 Tile_25:

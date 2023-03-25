@@ -8,15 +8,8 @@ LINEAS_POR_PANTALLA  EQU 200
 BUFFER_PANTALLA      EQU &8000
 
 TILES_FONDO         EQU 32       ; Primer tile opaco
-MAX_OBJETOS         EQU 10       ; Maximo de objetos por pantalla
+MAX_OBJETOS         EQU 16       ; Maximo de objetos por pantalla
 MAX_ENEMIGOS        EQU 6
-
-
-; Posicion de los marcadores
-MARCADOR_P1_X1       EQU 20     ; Posicion primer digito del jugador 1
-MARCADOR_P1_Y1       EQU 184
-MARCADOR_P1_X2       EQU 24     ; Posicion segundo digito del jugador 1
-MARCADOR_P1_Y2       EQU 184
 
 ; Colores de la paleta
 COLOR_BLACK          EQU &54
@@ -160,14 +153,20 @@ CAMBIO_PANTALLA_IZQUIERDA  EQU   2
 CAMBIO_PANTALLA_ARRIBA     EQU   3
 CAMBIO_PANTALLA_ABAJO      EQU   4
 
-; Posicion de las caras en el marcador y en la pantalla
-; de seleccion de personaje
-POSX_CARA_MARCADOR         EQU 8
-POSY_CARA_MARCADOR         EQU 184
-POSX_CARA_P1_SELECCION     EQU 18
-POSY_CARA_P1_SELECCION     EQU 100
-POSX_CARA_P2_SELECCION     EQU 54
-POSY_CARA_P2_SELECCION     EQU 100
-POSX_FLECHA_P1             EQU 20
-POSX_FLECHA_P2             EQU 56
-POSY_FLECHA                EQU 86
+; Posicion de los textos y digitos de la zona de marcadores
+POSX_CORAZON               EQU 1
+POSY_CORAZON               EQU 181
+POSX_VIDAS                 EQU 8
+POSY_PUNTUACIONES          EQU 183
+POSY_TEXTOS_ESTATICOS      EQU 192
+POSX_TEXTO_HARD            EQU 14
+POSX_TEXTO_SOFT            EQU 48
+POSX_MARCADOR_HARD         EQU 26
+POSX_MARCADOR_HARD_TOTAL   EQU 37
+POSX_MARCADOR_SOFT         EQU 60
+POSX_MARCADOR_SOFT_TOTAL   EQU 71
+
+; Maximo numero de objetos software y hardware
+; para pintar en el marcador (en BCD)
+MAX_HARD_ITEMS             EQU &10
+MAX_SOFT_ITEMS             EQU &50
