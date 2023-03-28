@@ -10,6 +10,7 @@ BUFFER_PANTALLA      EQU &8000
 TILES_FONDO         EQU 32       ; Primer tile opaco
 MAX_OBJETOS         EQU 16       ; Maximo de objetos por pantalla
 MAX_ENEMIGOS        EQU 6
+PRIMER_OBJETO_SOFT  EQU 12       ; Indice del primer objeto software
 
 ; Colores de la paleta
 COLOR_BLACK          EQU &54
@@ -110,10 +111,11 @@ SPRITE_ESTADO_PREV          EQU 5
 SPRITE_SALTO                EQU 6
 SPRITE_CAIDA                EQU 7
 SPRITE_CONGELADO            EQU 8
-SPRITE_PUNTOS               EQU 9
-SPRITE_ACTUALIZA_MARCADOR   EQU 10
-SPRITE_FRAME                EQU 11
-SPRITE_FRAMES               EQU 13
+SPRITE_PUNTOS_HARD          EQU 9
+SPRITE_PUNTOS_SOFT          EQU 10
+SPRITE_ACTUALIZA_MARCADOR   EQU 11
+SPRITE_FRAME                EQU 12
+SPRITE_FRAMES               EQU 14
 
 
 ; Atributos de los enemigos

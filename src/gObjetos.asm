@@ -114,39 +114,6 @@ DEFB #ff, #ff, #ff, #df
 
 ;; Tile Objeto_10 - 8x8 pixels, 4x8 bytes.
 Objeto_10:
-DEFB #55, #3f, #bf, #00
-DEFB #55, #3f, #bf, #aa
-DEFB #55, #3f, #bf, #aa
-DEFB #55, #3f, #3f, #aa
-DEFB #55, #ff, #ff, #aa
-DEFB #55, #c0, #c0, #aa
-DEFB #55, #c0, #c0, #aa
-DEFB #55, #c0, #c0, #aa
-
-;; Tile Objeto_11 - 8x8 pixels, 4x8 bytes.
-Objeto_11:
-DEFB #18, #30, #30, #24
-DEFB #60, #c0, #c0, #90
-DEFB #60, #c0, #c0, #90
-DEFB #75, #55, #aa, #ba
-DEFB #75, #55, #aa, #ba
-DEFB #60, #c0, #c0, #90
-DEFB #30, #c3, #c3, #30
-DEFB #61, #30, #30, #92
-
-;; Tile Objeto_12 - 8x8 pixels, 4x8 bytes.
-Objeto_12:
-DEFB #c0, #c0, #c0, #c0
-DEFB #c0, #c0, #c0, #c0
-DEFB #c0, #c0, #c0, #c0
-DEFB #d5, #55, #aa, #ea
-DEFB #d5, #55, #aa, #ea
-DEFB #c0, #c0, #c0, #c0
-DEFB #c0, #ff, #ff, #c0
-DEFB #d5, #c0, #c0, #ea
-
-;; Tile Objeto_13 - 8x8 pixels, 4x8 bytes.
-Objeto_13:
 DEFB #55, #ff, #ff, #aa
 DEFB #55, #33, #33, #aa
 DEFB #55, #b1, #33, #aa
@@ -156,8 +123,8 @@ DEFB #55, #ff, #ff, #ff
 DEFB #3f, #3f, #3f, #ff
 DEFB #ff, #ff, #ff, #ff
 
-;; Tile Objeto_14 - 8x8 pixels, 4x8 bytes.
-Objeto_14:
+;; Tile Objeto_11 - 8x8 pixels, 4x8 bytes.
+Objeto_11:
 DEFB #00, #90, #82, #00
 DEFB #00, #30, #82, #00
 DEFB #00, #c3, #82, #00
@@ -166,6 +133,39 @@ DEFB #00, #55, #00, #00
 DEFB #00, #77, #22, #00
 DEFB #11, #33, #33, #00
 DEFB #11, #33, #33, #00
+
+;; Tile Objeto_12 - 8x8 pixels, 4x8 bytes.
+Objeto_12:
+DEFB #55, #3f, #bf, #00
+DEFB #55, #3f, #bf, #aa
+DEFB #55, #3f, #bf, #aa
+DEFB #55, #3f, #3f, #aa
+DEFB #55, #ff, #ff, #aa
+DEFB #55, #c0, #c0, #aa
+DEFB #55, #c0, #c0, #aa
+DEFB #55, #c0, #c0, #aa
+
+;; Tile Objeto_13 - 8x8 pixels, 4x8 bytes.
+Objeto_13:
+DEFB #c0, #c0, #c0, #c0
+DEFB #c0, #c0, #c0, #c0
+DEFB #c0, #c0, #c0, #c0
+DEFB #d5, #55, #aa, #ea
+DEFB #d5, #55, #aa, #ea
+DEFB #c0, #c0, #c0, #c0
+DEFB #c0, #ff, #ff, #c0
+DEFB #d5, #c0, #c0, #ea
+
+;; Tile Objeto_14 - 8x8 pixels, 4x8 bytes.
+Objeto_14:
+DEFB #18, #30, #30, #24
+DEFB #60, #c0, #c0, #90
+DEFB #60, #c0, #c0, #90
+DEFB #75, #55, #aa, #ba
+DEFB #75, #55, #aa, #ba
+DEFB #60, #c0, #c0, #90
+DEFB #30, #c3, #c3, #30
+DEFB #61, #30, #30, #92
 
 ;; Tile Objeto_15 - 8x8 pixels, 4x8 bytes.
 Objeto_15:

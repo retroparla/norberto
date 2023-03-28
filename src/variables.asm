@@ -39,7 +39,8 @@ P1_ESTADO_PREV DB 0  ; Estado anterior
 P1_SALTO DB 0
 P1_CAIDA DB 0
 P1_CONGELADO DB 0
-P1_PUNTOS DB 0 ; Puntuacion en BCD
+P1_PUNTOS_HARD DB 0  ; Puntuacion hardware en BCD
+P1_PUNTOS_SOFT DB 0  ; Puntuacion software en BCD
 P1_ACTUALIZA_MARCADOR DB 0 ; Flag para repintado del marcador
 P1_FRAME DW Jugador_0  ; Siguiente frame de la animacion
 P1_FRAMES   DW Jugador_0, Jugador_2, Jugador_3           

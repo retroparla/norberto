@@ -512,6 +512,10 @@ CapturaObjetos_Bucle:
       ld HL, NUM_OBJETOS
       dec (HL)
 
+      ; Guardamos el tipo para devolverlo al final
+      ld A, (IY+3)
+      push AF
+
       ; Borramos el objeto A
 
       ; *********** Primera idea: borrar pintando el fondo
@@ -566,6 +570,7 @@ CapturaObjetos_Bucle:
       ld A, 8
       call PintaFondo8
 
+      pop AF      ; Recuperamos el tipo de objeto para devolverlo en A
       ret   ; No comprobamos el resto, salimos
 CapturaObjetos_Siguiente:
       ; Pasamos al siguiente objeto

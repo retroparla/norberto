@@ -19,3 +19,6 @@ Historial de cambios
 
 25/03/2023:
    - Primeros objetos. Nueva fuente de 5x5 pixels. Zona de marcadores rediseñada.
+
+28/03/2021:
+   - Distingue entre objetos hardware y software para incrementar cada marcador.

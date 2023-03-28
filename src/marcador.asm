@@ -7,7 +7,7 @@ ActualizaMarcadorSoft:
     ld E, POSY_PUNTUACIONES
     ld B, POSX_MARCADOR_SOFT + 4
     ld C, POSY_PUNTUACIONES
-    ld A, (IX+SPRITE_PUNTOS)
+    ld A, (IX+SPRITE_PUNTOS_SOFT)
     call ActualizaMarcador
     ret
 
@@ -16,7 +16,7 @@ ActualizaMarcadorHard:
     ld E, POSY_PUNTUACIONES
     ld B, POSX_MARCADOR_HARD + 4
     ld C, POSY_PUNTUACIONES
-    ld A, (IX+SPRITE_PUNTOS)
+    ld A, (IX+SPRITE_PUNTOS_HARD)
     call ActualizaMarcador
     ret
 

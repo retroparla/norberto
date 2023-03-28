@@ -241,10 +241,23 @@ Interrupcion3:
       call CapturaObjetos
       cp &FF      ; Nada?
       jr Z, Interrupcion3_ChoqueEnemigosP1
-      ld A, (IX+SPRITE_PUNTOS)
+      ; Objeto hardware o software?
+      ; En A se devuelve el tipo del objeto.
+      cp PRIMER_OBJETO_SOFT
+      jp C, Interrupcion3_CogeHardware    ; A < PRIMER_OBJETO_SOFT
+      ; Incrementa contador software
+      ld A, (IX+SPRITE_PUNTOS_SOFT)
       add A, 1    ; Incrementamos la puntuacion
       daa         ; Ojo, la puntuacion esta en BCD (no vale inc)
-      ld (IX+SPRITE_PUNTOS), A
+      ld (IX+SPRITE_PUNTOS_SOFT), A
+      jp Interrupcion3_ActualizaMarcadorObjetos
+Interrupcion3_CogeHardware:
+      ; Incrementa contador hardware
+      ld A, (IX+SPRITE_PUNTOS_HARD)
+      add A, 1    ; Incrementamos la puntuacion
+      daa         ; Ojo, la puntuacion esta en BCD (no vale inc)
+      ld (IX+SPRITE_PUNTOS_HARD), A
+Interrupcion3_ActualizaMarcadorObjetos:
       ld (IX+SPRITE_ACTUALIZA_MARCADOR), 1  ; Hay que repintar el marcador
 
 Interrupcion3_ChoqueEnemigosP1:
@@ -330,6 +343,7 @@ Interrupcion4_MarcadorPlayer1:
       cp 0
       jr Z, Interrupcion4_Fin
       call ActualizaMarcadorSoft
+      call ActualizaMarcadorHard
       ld (IX+SPRITE_ACTUALIZA_MARCADOR), 0      ; Reset flag
 
 Interrupcion4_Fin:
