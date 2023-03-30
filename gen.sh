@@ -36,3 +36,4 @@ iDSK juego.dsk -n
 iDSK juego.dsk -i juego.bin -e 100 -c 100 -t 1
 
 echo "¡HECHO!"
+

@@ -102,3 +102,4 @@ if( root[1].tag == "layer" and root[1][0].tag == "data" ):
 
 else:
    print("Cannot parse map!")
+   
