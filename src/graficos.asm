@@ -235,12 +235,12 @@ PintaBloque8Transp_SiguienteLinea
 
 ; ***********************************************************
 ; PintaObjetos: coloca en la memoria de video los objetos
-; almacenados en el array OBJETOS con formato (visible,X,Y,tipo)
-; hasta un maximo de MAX_OBJETOS
+; almacenados en el array PANTALLA_ACTUAL_OBJETOS
+; con formato (visible,X,Y,tipo) hasta un maximo de MAX_OBJETOS
 ; ***********************************************************
 PintaObjetos:
       ; Obtenemos el puntero al objeto
-      ld IX, OBJETOS          ; Objetos de la pantalla
+      ld IX, (PANTALLA_ACTUAL_OBJETOS)      ; Objetos de la pantalla
 PintaObjetos_Bucle:
       ld A, (IX+0)            ; Visible/Invisible o fin de array
       cp &FF
@@ -271,48 +271,6 @@ PintaObjeto_SigObjeto:
       ld C, 4
       add IX, BC  ; Siguiente objeto (+4 bytes)
       jr PintaObjetos_Bucle
-
-; ***********************************************************
-; InicializaObjetos: copia la lista de objetos desde el 
-; array de definicion hasta la memoria donde podemos
-; activar/desactivar el flag de visibilidad. Si tocamos
-; directamente el array de definicion, no podemos
-; reiniciar un nivel, por ejemplo.
-; HL: puntero a la definicion de la lista de objetos
-; ***********************************************************
-InicializaObjetos:
-      ; Borramos el array de datos
-      ld B, MAX_OBJETOS*4     ; 4 atributos por objeto
-      ld A, 0
-      ld DE, OBJETOS          ; Array donde almacenaremos los objetos
-InicializaObjetos_BucleBorrado:
-      ld (DE), A
-      inc DE
-      djnz InicializaObjetos_BucleBorrado
-      ld (NUM_OBJETOS), A     ; 0 objetos en pantalla
-      ; Copia los objetos desde el array de definicion
-      ; hasta que encontremos el &FF de fin de array
-      ld DE, OBJETOS
-      ; Contador de objetos, se decrementa con cada ldi
-      ld B, 0
-      ld C, MAX_OBJETOS*3     ; Ojo, 3 ldi por cada objeto      
-InicializaObjetos_BucleCopia:
-      ld A, (HL)
-      cp &FF            ; Fin de la definicion de objetos
-      jr Z, InicializaObjetos_Fin
-      ld A, 1
-      ld (DE), A        ; Marcamos como visibles todos los objetos
-      inc DE
-      ldi               ; Copiamos X
-      ldi               ; Copiamos Y
-      ldi               ; Copiamos TIPO
-      jr InicializaObjetos_BucleCopia
-InicializaObjetos_Fin:
-      ld A, MAX_OBJETOS ; En BC tenemos MAX_OBJETOS - NUM_OBJETOS
-      sub C             ; En A = MAX_OBJETOS para tener NUM_OBJETOS otra vez
-      ld (NUM_OBJETOS), A
-      ret
-
 
 
 ; ***********************************************************
@@ -494,7 +452,7 @@ VSync_Bucle:
 ; ***********************************************************
 
 CapturaObjetos:
-      ld IY, OBJETOS
+      ld IY, (PANTALLA_ACTUAL_OBJETOS)
 CapturaObjetos_Bucle:
       ld A, (IY+0)      ; Objeto invisible o fin de lista?
       cp &FF

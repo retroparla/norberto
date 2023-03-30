@@ -3,6 +3,7 @@
 ; Actualiza los punteros PANTALLA_ACTUAL_OBJETOS y
 ; PANTALLA_ACTUAL_ENEMIGOS con las direcciones de los
 ; objetos y enemigos de la nueva pantalla.
+; Actualiza NUM_OBJETOS con el numero de objetos de la pantalla.
 ; HL: puntero a la definicion de la pantalla (comprimida)
 DescomprimePantallaActual:
    ld DE, PANTALLA_ACTUAL   ; Destino, pantalla descomprimida
@@ -34,13 +35,20 @@ DescomprimePantallaActual_Objetos:
    ld (PANTALLA_ACTUAL_OBJETOS), HL
    ; La lista de objetos termina con un &FF.
    ; Avanzamos HL hasta encontrarlo.
+   ld B, 0  ; Numero de objetos en esta pantalla
 DescomprimePantallaActual_BuscaEnemigos:
    ld A, (HL)
-   cp &FF
+   cp &FF   ; Fin de lista?
    jp Z, DescomprimePantallaActual_Enemigos
-   inc HL
+   inc HL   ; Bit de visibilidad
+   inc HL   ; Posicion X
+   inc HL   ; Posicion Y
+   inc HL   ; Tipo de objeto
+   inc B
    jp DescomprimePantallaActual_BuscaEnemigos
 DescomprimePantallaActual_Enemigos:
+   ld A, B
+   ld (NUM_OBJETOS), A  ; Guardamos el numero de objetos
    ; La lista de enemigos empieza en el siguiente
    ; byte tras el &FF de los objetos.
    ; Guardamos la direccion en PANTALLA_ACTUAL_ENEMIGOS

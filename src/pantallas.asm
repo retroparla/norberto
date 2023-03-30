@@ -86,59 +86,73 @@ P044:
 P051:
    INCBIN "../data/p051.bin"
    ; Objetos
-
-   db 8    ; Posicion X
+P051Obj:
+   db 1     ; Visible
+   db 8     ; Posicion X
    db 160   ; Posicion Y
    db 0     ; Tipo de objeto
 
+   db 1     ; Visible
    db 13    ; Posicion X
    db 160   ; Posicion Y
    db 1     ; Tipo de objeto
    
+   db 1     ; Visible
    db 18    ; Posicion X
    db 160   ; Posicion Y
    db 2     ; Tipo de objeto
 
+   db 1     ; Visible
    db 23    ; Posicion X
    db 160   ; Posicion Y
    db 3     ; Tipo de objeto
 
+   db 1     ; Visible
    db 28    ; Posicion X
    db 160   ; Posicion Y
    db 5     ; Tipo de objeto
 
+   db 1     ; Visible
    db 33    ; Posicion X
    db 160   ; Posicion Y
    db 4     ; Tipo de objeto
 
+   db 1     ; Visible
    db 38    ; Posicion X
    db 160   ; Posicion Y
    db 6     ; Tipo de objeto
 
+   db 1     ; Visible
    db 43    ; Posicion X
    db 160   ; Posicion Y
    db 7     ; Tipo de objeto
 
+   db 1     ; Visible
    db 48    ; Posicion X
    db 160   ; Posicion Y
    db 8     ; Tipo de objeto
 
+   db 1     ; Visible
    db 53    ; Posicion X
    db 160   ; Posicion Y
    db 9     ; Tipo de objeto
 
+   db 1     ; Visible
    db 58    ; Posicion X
    db 160   ; Posicion Y
    db 10     ; Tipo de objeto
 
+   db 1     ; Visible
    db 63    ; Posicion X
    db 160   ; Posicion Y
    db 12     ; Tipo de objeto
 
+   db 1     ; Visible
    db 68    ; Posicion X
    db 160   ; Posicion Y
    db 13     ; Tipo de objeto
 
+   db 1     ; Visible
    db 73    ; Posicion X
    db 160   ; Posicion Y
    db 14     ; Tipo de objeto

@@ -48,11 +48,6 @@ P1_FRAMES   DW Jugador_0, Jugador_2, Jugador_3
             DW Jugador_1, Jugador_2, Jugador_4
             DW Jugador_6
      
-
-; Objetos. Máximo 10 objetos de 8x8 pixels por pantalla en formato (visible, posx, posx, tipo)
-OBJETOS  DS 4*MAX_OBJETOS
-         DB &FF   ; Fin de array
-         
 NUM_OBJETOS DB 0  ; Numero de objetos presentes en pantalla
 
 ; Buffer de enemigos: array de NUM_ENEMIGOS de TAM_ENEMIGO bytes cada uno

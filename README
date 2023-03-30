@@ -22,3 +22,7 @@ Historial de cambios
 
 28/03/2021:
    - Distingue entre objetos hardware y software para incrementar cada marcador.
+
+30/03/2023:
+   - Eliminado el array auxiliar de objetos. Se usan directamente los objetos definidos tras los datos de cada pantalla, para que el bit de visibilidad se mantenga al pasar de una pantalla a otra.
+   (TODO: restablecer los bits de visibilidad de todos los objetos en todas la pantallas al reiniciar la partida).
