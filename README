@@ -10,7 +10,7 @@ Historial de cambios
    - Versión inicial
 
 18/03/2023: 
-   - Solucionado salto a pantaeella superior (el personaje podía atravesar el techo). 
+   - Solucionado salto a pantalla superior (el personaje podía atravesar el techo). 
    - Calcular automáticamente el índice de la siguiente pantalla (antes cada pantalla enlazaba a las cuatro adyacentes, ya no es necesario).
    - Cambios en el método que descomprime la pantalla actual para encontrar el inicio de la lista de objetos y enemigos de esa pantalla, situados tras la definición de los tiles de la propia pantalla.
 
@@ -29,3 +29,6 @@ Historial de cambios
 
 31/03/2023:
    - Los objetos se definen directamente en Tiled. El script compress.py los lee del archivo .tmx y los añade al binario con la definición de la pantalla (TODO: hacer lo mismo para los enemigos).
+
+31/03/2023:
+   - Los enemigos también se crean desde Tiled. Ya se puede diseñar el juego completo sin tocar una sola línea de código.

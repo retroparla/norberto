@@ -9,6 +9,7 @@ TERMINATION_FLAG = 0xFF
 
 # First object ID
 FIRST_OBJECT_ID = 65
+FIRST_ENEMY_ID = 81
 
 # Compress the tile list
 # If the tile is not repeated, the tile value is untouched.
@@ -64,18 +65,48 @@ def Decompress( data ):
       i = i + 1
    return c
 
-def GetObjects( objectGroup ):
+def GetObjectsAndEnemies( objectGroup ):
    objects = []
+   enemies = []
+   numEnemies = 0
    if objectGroup is not None:
       for object in objectgroup:
-         # visibility, x, y, type
-         objects.append( 1 )
-         objects.append( int(float(object.attrib['x'])) // 2 ) # 80 bytes width
-         objects.append( ((int(float(object.attrib['y'])) //8)*8 ) - 8) # 200 pixels height, use top left corner, round to *8
-         objects.append( int(object.attrib['gid']) - FIRST_OBJECT_ID )
+         if int(object.attrib['gid']) < FIRST_ENEMY_ID:  # Is an object
+            # visibility, x, y, type
+            objects.append( 1 )
+            objects.append( int(float(object.attrib['x'])) // 2 ) # 80 bytes width
+            objects.append( ((int(float(object.attrib['y'])) //8)*8 ) - 8) # 200 pixels height, use top left corner, round to *8
+            objects.append( int(object.attrib['gid']) - FIRST_OBJECT_ID )
+         else: # Is an enemy
+            x = int(float(object.attrib['x'])) // 2  # 80 bytes width
+            y = int(float(object.attrib['y'])) - 16 # 200 pixels height, use top left corner
+            id = (int(object.attrib['gid']) - FIRST_ENEMY_ID ) // 4
+            # Reset values
+            (desplazamiento, direccion, refresco, sentido, velocidad) = (-1,-1,-1,-1,-1)
+            properties = object.find("properties")
+            if properties is not None:
+               for property in properties.iter("property"):
+                  # X, Y, tipo, desplazamiento, direccion, sentido, velocidad, rate
+                  if property.attrib['name'] == "desplazamiento":
+                     desplazamiento = int(property.attrib['value'])
+                  if property.attrib['name'] == "direccion":
+                     direccion = int(property.attrib['value'])
+                  if property.attrib['name'] == "refresco":
+                     refresco = int(property.attrib['value'])
+                  if property.attrib['name'] == "sentido":
+                     sentido = int(property.attrib['value'])
+                  if property.attrib['name'] == "velocidad":
+                     velocidad = int(property.attrib['value'])
+            # Add enemy if everything is ok
+            if (desplazamiento, direccion, refresco, sentido, velocidad) != (-1,-1,-1,-1,-1):
+               enemies.extend( (x, y, id, desplazamiento, direccion, sentido, velocidad, refresco) )
+               numEnemies = numEnemies + 1
+
    # Add end of object definition (&FF)
    objects.append(255)
-   return objects
+   # Enemy array starts with the enemies number
+   enemies.insert( 0, numEnemies )
+   return objects, enemies
 
 # Open the map file
 fp = open(sys.argv[1], 'r')
@@ -106,11 +137,12 @@ print( len(dataInt), "->", len(compressed), "bytes (", int(len(compressed)*100 /
 
 # Parse objects
 objectgroup = root.find("objectgroup")
-objects = GetObjects( objectgroup )
+objects, enemies = GetObjectsAndEnemies( objectgroup )
 print( "Objetos: ", objects )
+print( "Enemigos: ", enemies )
 
 # Add object list to screen compressed data
-compressed = compressed + objects 
+compressed = compressed + objects + enemies
 
 # Save to a binary file
 outputFile = sys.argv[1].partition('.')[0] + ".bin"

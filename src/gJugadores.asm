@@ -1,5 +1,5 @@
-;; Data created with Img2CPC - (c) Retroworks - 2007-2017
-;; Tile Jugador_0 - 8x16 pixels, 4x16 bytes.
+; Data created with Img2CPC - (c) Retroworks - 2007-2015
+; Tile Jugador_0 - 8x16 pixels, 4x16 bytes.
 Jugador_0:
 DEFB #00, #0c, #0c, #00
 DEFB #04, #ae, #5d, #08
@@ -18,7 +18,7 @@ DEFB #00, #33, #33, #00
 DEFB #00, #22, #11, #00
 DEFB #40, #80, #40, #80
 
-;; Tile Jugador_1 - 8x16 pixels, 4x16 bytes.
+; Tile Jugador_1 - 8x16 pixels, 4x16 bytes.
 Jugador_1:
 DEFB #00, #ae, #5d, #00
 DEFB #04, #0c, #0c, #08
@@ -37,7 +37,7 @@ DEFB #91, #33, #33, #62
 DEFB #00, #00, #00, #00
 DEFB #00, #00, #00, #00
 
-;; Tile Jugador_2 - 8x16 pixels, 4x16 bytes.
+; Tile Jugador_2 - 8x16 pixels, 4x16 bytes.
 Jugador_2:
 DEFB #00, #0c, #0c, #00
 DEFB #04, #0c, #ae, #aa
@@ -56,7 +56,7 @@ DEFB #00, #33, #33, #22
 DEFB #91, #22, #00, #62
 DEFB #c0, #00, #00, #c0
 
-;; Tile Jugador_3 - 8x16 pixels, 4x16 bytes.
+; Tile Jugador_3 - 8x16 pixels, 4x16 bytes.
 Jugador_3:
 DEFB #00, #0c, #ae, #aa
 DEFB #04, #0c, #0c, #08
@@ -75,7 +75,7 @@ DEFB #00, #41, #c3, #00
 DEFB #00, #11, #22, #00
 DEFB #00, #40, #c0, #00
 
-;; Tile Jugador_4 - 8x16 pixels, 4x16 bytes.
+; Tile Jugador_4 - 8x16 pixels, 4x16 bytes.
 Jugador_4:
 DEFB #00, #0c, #0c, #00
 DEFB #55, #5d, #0c, #08
@@ -94,7 +94,7 @@ DEFB #11, #33, #33, #00
 DEFB #91, #00, #11, #62
 DEFB #c0, #00, #00, #c0
 
-;; Tile Jugador_5 - 8x16 pixels, 4x16 bytes.
+; Tile Jugador_5 - 8x16 pixels, 4x16 bytes.
 Jugador_5:
 DEFB #55, #5d, #0c, #00
 DEFB #04, #0c, #0c, #08
@@ -113,7 +113,7 @@ DEFB #00, #c3, #82, #00
 DEFB #00, #11, #22, #00
 DEFB #00, #c0, #80, #00
 
-;; Tile Jugador_6 - 8x16 pixels, 4x16 bytes.
+; Tile Jugador_6 - 8x16 pixels, 4x16 bytes.
 Jugador_6:
 DEFB #00, #00, #00, #00
 DEFB #00, #00, #00, #00

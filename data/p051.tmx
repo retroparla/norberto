@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.9" tiledversion="1.9.2" orientation="orthogonal" renderorder="right-down" compressionlevel="0" width="20" height="22" tilewidth="8" tileheight="8" infinite="0" nextlayerid="11" nextobjectid="47">
+<map version="1.9" tiledversion="1.9.2" orientation="orthogonal" renderorder="right-down" compressionlevel="0" width="20" height="22" tilewidth="8" tileheight="8" infinite="0" nextlayerid="11" nextobjectid="56">
  <tileset firstgid="1" source="tiles.tsx"/>
  <tileset firstgid="65" source="objetos.tsx"/>
+ <tileset firstgid="81" source="enemigos.tsx"/>
  <layer id="2" name="Capa de Patrones 1" width="20" height="22">
   <data encoding="csv">
 41,42,41,42,41,42,41,42,41,42,41,42,41,42,41,42,41,42,41,42,
@@ -50,5 +51,41 @@
   <object id="44" gid="79" x="28.0895" y="24.7512" width="8" height="8"/>
   <object id="45" gid="76" x="44.5621" y="49.567" width="8" height="8"/>
   <object id="46" gid="65" x="44.1342" y="144.766" width="8" height="8"/>
+  <object id="49" gid="81" x="141.686" y="168.019" width="8" height="16">
+   <properties>
+    <property name="desplazamiento" value="50"/>
+    <property name="direccion" value="0"/>
+    <property name="refresco" value="1"/>
+    <property name="sentido" value="1"/>
+    <property name="velocidad" value="1"/>
+   </properties>
+  </object>
+  <object id="52" gid="96" x="61.2486" y="45.8656" width="8" height="16">
+   <properties>
+    <property name="desplazamiento" value="20"/>
+    <property name="direccion" value="1"/>
+    <property name="refresco" value="2"/>
+    <property name="sentido" value="0"/>
+    <property name="velocidad" value="1"/>
+   </properties>
+  </object>
+  <object id="54" gid="101" x="40.0695" y="168.019" width="8" height="16">
+   <properties>
+    <property name="desplazamiento" value="30"/>
+    <property name="direccion" value="0"/>
+    <property name="refresco" value="2"/>
+    <property name="sentido" value="0"/>
+    <property name="velocidad" value="1"/>
+   </properties>
+  </object>
+  <object id="55" gid="98" x="140.403" y="71.1093" width="8" height="16">
+   <properties>
+    <property name="desplazamiento" value="45"/>
+    <property name="direccion" value="1"/>
+    <property name="refresco" value="1"/>
+    <property name="sentido" value="0"/>
+    <property name="velocidad" value="2"/>
+   </properties>
+  </object>
  </objectgroup>
 </map>
