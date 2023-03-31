@@ -26,3 +26,6 @@ Historial de cambios
 30/03/2023:
    - Eliminado el array auxiliar de objetos. Se usan directamente los objetos definidos tras los datos de cada pantalla, para que el bit de visibilidad se mantenga al pasar de una pantalla a otra.
    (TODO: restablecer los bits de visibilidad de todos los objetos en todas la pantallas al reiniciar la partida).
+
+31/03/2023:
+   - Los objetos se definen directamente en Tiled. El script compress.py los lee del archivo .tmx y los añade al binario con la definición de la pantalla (TODO: hacer lo mismo para los enemigos).
