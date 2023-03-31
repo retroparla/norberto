@@ -7,6 +7,9 @@ import sys
 REPETITION_FLAG = 0x80
 TERMINATION_FLAG = 0xFF
 
+# First object ID
+FIRST_OBJECT_ID = 65
+
 # Compress the tile list
 # If the tile is not repeated, the tile value is untouched.
 # If the tile is repeated, the REPETITION_FLAG is added
@@ -61,6 +64,19 @@ def Decompress( data ):
       i = i + 1
    return c
 
+def GetObjects( objectGroup ):
+   objects = []
+   if objectGroup is not None:
+      for object in objectgroup:
+         # visibility, x, y, type
+         objects.append( 1 )
+         objects.append( int(float(object.attrib['x'])) // 2 ) # 80 bytes width
+         objects.append( ((int(float(object.attrib['y'])) //8)*8 ) - 8) # 200 pixels height, use top left corner, round to *8
+         objects.append( int(object.attrib['gid']) - FIRST_OBJECT_ID )
+   # Add end of object definition (&FF)
+   objects.append(255)
+   return objects
+
 # Open the map file
 fp = open(sys.argv[1], 'r')
 if not bool(fp):
@@ -72,34 +88,42 @@ tree = xml.parse(sys.argv[1])
 root = tree.getroot()
 
 # Get the tiles in CSV format
-if( root[1].tag == "layer" and root[1][0].tag == "data" ):
-   tiles = root[1][0].text
+layer = root.find("layer")
+data = layer.find("data")
+tiles = data.text
 
-   # Convert to a list of integers
-   dataStr = tiles.replace('\n','').split(',')
-   dataInt = list(map(int,dataStr))
+# Convert to a list of integers
+dataStr = tiles.replace('\n','').split(',')
+dataInt = list(map(int,dataStr))
 
-   # Apply the compress algorithm
-   compressed = Compress(dataInt)
+# Apply the compress algorithm
+compressed = Compress(dataInt)
 
-   # Print the compression ratio
-   #print( dataInt )
-   #print( compressed )
-   print( len(dataInt), "->", len(compressed), "bytes (", int(len(compressed)*100 / len(dataInt)), "% )")
+# Print the compression ratio
+#print( dataInt )
+#print( compressed )
+print( len(dataInt), "->", len(compressed), "bytes (", int(len(compressed)*100 / len(dataInt)), "% )")
 
-   # Save to a binary file
-   outputFile = sys.argv[1].partition('.')[0] + ".bin"
-   fOut = open(outputFile, 'wb')
-   for i in compressed :
-      fOut.write( i.to_bytes(1, byteorder='big' ) )
-   fOut.close()
+# Parse objects
+objectgroup = root.find("objectgroup")
+objects = GetObjects( objectgroup )
+print( "Objetos: ", objects )
 
-   print( "Saved to", outputFile )
+# Add object list to screen compressed data
+compressed = compressed + objects 
 
-   # Uncompress test
-   #uncompressed = Decompress( compressed )
-   #print( uncompressed )
+# Save to a binary file
+outputFile = sys.argv[1].partition('.')[0] + ".bin"
+fOut = open(outputFile, 'wb')
+for i in compressed :
+   fOut.write( i.to_bytes(1, byteorder='big' ) )
+fOut.close()
 
-else:
-   print("Cannot parse map!")
+print( "Saved to", outputFile )
+
+# Uncompress test
+#uncompressed = Decompress( compressed )
+#print( uncompressed )
+
+
    

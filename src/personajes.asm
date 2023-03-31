@@ -284,7 +284,7 @@ CalculaPosicion_Sigue:
       ret Z             
 
 
-CalculaPosicion_Derecha
+CalculaPosicion_Derecha:
       cp MOV_DERECHA ; Andamos hacia la derecha 2 pixels
       jr Z, CalculaPosicionDerecha_NoSalto
       cp MOV_SALTO_DERECHA ; Andamos hacia la derecha saltando

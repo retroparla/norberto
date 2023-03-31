@@ -54,17 +54,6 @@ PantallaABuffer:
    ld BC, BYTES_POR_PANTALLA
    ldir
    ret
-
-; ***********************************************************
-; BufferAPantalla: vuelca el buffer en la memoria de video
-; Modifica: HL, DE, BC
-; ***********************************************************
-BufferAPantalla:
-   ld DE, MEM_VIDEO
-   ld HL, BUFFER_PANTALLA
-   ld BC, BYTES_POR_PANTALLA
-   ldir
-   ret
          
 ; ***********************************************************
 ; PintaFondo8: imprime un bloque del buffer (8px de ancho) en pantalla
@@ -661,17 +650,3 @@ ret ; [3] If Carry, no_collision
 ;; Collision: Return with Carry flag off (NC)
 ;; No-Collision: Return with Carry flag on (C)
 
-;**************************************************
-; PintaRect: pinta un rectangulo de 
-; ancho D bytes y alto E pixels
-; DE: ancho y alto
-; A: color
-; HL: posicion de la esquina UL en memoria de video
-;**************************************************
-PintaRect:
-   ld B, D
-PintaRect_loop:
-   ld (HL), A
-   inc HL
-   djnz PintaRect_loop
-   ret
