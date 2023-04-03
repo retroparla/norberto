@@ -73,20 +73,19 @@ InicializaEnemigos_Bucle:
    ldi   ; rate
 
    ; anim: buscamos el puntero a la lista de frames de ese enemigo
-   ld    HL, ENEMIGOS_ANIM  ; Primer tipo de enemigo
+   ld    HL, Enemigotileset  ; Primer tipo de enemigo
    ld    B, 0
    ld    C, A    ; Indice a la lista de tipos 
    add   HL, BC   ; Avanzamos hasta los frames de este tipo de enemigo
-   add   HL, BC   ; Sumamos dos veces porque son words
-   ldi   ; anim   ; ldi x 2, es un puntero
+   add   HL, BC   ; 4 frames por enemigo x 2 bytes por puntero
+   add   HL, BC
+   add   HL, BC
+   add   HL, BC
+   add   HL, BC
+   add   HL, BC
+   add   HL, BC
+   ldi   ; anim   ; ldi x 2 x 2, es un puntero
    ldi
-
-   ; numAnim: numero de frames de este enemigo
-   ld    HL, ENEMIGOS_NUM_ANIM
-   ld    B, 0     ; BC ha sido modificado en el anterior ldi
-   ld    C, A     ; volvemos a sumar el indice
-   add   HL, BC   ; Avanzamos usando tipo como indice
-   ldi   ; numAnim
 
    ; Los atributos dinamicos se inicializan con el mismo
 
@@ -118,11 +117,11 @@ InicializaEnemigos_Bucle:
    cp 0
    jr Z, InicializaEnemigos_MiraDerecha
    ; El sprite empieza moviendose hacia la izquierda
-   ; Sacamos el primer frame que mira a la izquierda (ENEMIGO_ANIM+ENEMIGO_NUM_ANIM*TAM_SPRITE_ENEMIGO)
-   ; Sumamos ENEMIGO_NUM_ANIM*TAM_SPRITE_ENEMIGO al puntero al primer frame
+   ; Sacamos el primer frame que mira a la izquierda (ENEMIGO_ANIM+ENEMIGOS_NUM_ANIM*TAM_SPRITE_ENEMIGO)
+   ; Sumamos ENEMIGOS_NUM_ANIM*TAM_SPRITE_ENEMIGO al puntero al primer frame
    ld D, 0
    ld E, TAM_SPRITE_ENEMIGO   ; 64 bytes (4x16bytes)
-   ld B, (IX+ENEMIGO_NUM_ANIM)
+   ld B, ENEMIGOS_NUM_ANIM
 InicializaEnemigos_Suma:
    add HL, DE
    djnz InicializaEnemigos_Suma
@@ -184,7 +183,12 @@ ActualizaEnemigos_Sigue:
    ld A, (IX+ENEMIGO_RATE)
    ld (IX+ENEMIGO_RATE_ACT), A
 
-  
+   ; Si desplazamiento = 0, el enemigo es estatico
+   ; Nos saltamos toda la parte de modificar la posicion
+   ld A, (IX+ENEMIGO_DESP)
+   cp 0
+   jp Z, ActualizaEnemigos_Frame
+
    ld A, (IX+ENEMIGO_SEN_ACT)     ; Dependiendo de ENEMIGO_SEN, incrementamos o decrementamos 
    cp 0
    jr Z, ActualizaEnemigos_Incrementa
@@ -245,7 +249,7 @@ ActualizaEnemigos_GuardaDesp:
 ActualizaEnemigos_Frame:         ; Incrementamos el numero de frame. Si llegamos a ENEMIGO_NUM_FRAME-1
                                  ; volvemos a 0
    ld A, (IX+ENEMIGO_NUM_FRAME)  ; Frame actual
-   ld B, (IX+ENEMIGO_NUM_ANIM)   ; Numero total de frames
+   ld B, ENEMIGOS_NUM_ANIM       ; Numero total de frames
    inc A
    cp B
    jp C, ActualizaEnemigos_FrameGuarda ; Salta si A < B, no reseteamos el contador
@@ -273,7 +277,7 @@ ActualizaEnemigos_FrameGuarda
    ; => TAM_SPRITE_ENEMIGO * (NUM_ANIM + NUM_FRAME)
    ; Usamos B = NUM_ANIM + NUM_FRAME como contador del DJNZ 
    ; donde sumamos TAM_SPRITE_ENEMIGO en cada vuelta 
-   ld A, (IX+ENEMIGO_NUM_ANIM)
+   ld A, ENEMIGOS_NUM_ANIM
    add A, B
    ld B, A     ; Contador listo: B = NUM_ANIM + NUM_FRAME
    jr ActualizaEnemigos_Bucle

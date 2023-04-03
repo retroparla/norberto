@@ -32,3 +32,6 @@ Historial de cambios
 
 31/03/2023:
    - Los enemigos también se crean desde Tiled. Ya se puede diseñar el juego completo sin tocar una sola línea de código.
+
+02/04/2023:
+   - Posibilidad de enemigos estáticos si desplazamiento=0 (ej. fuego).

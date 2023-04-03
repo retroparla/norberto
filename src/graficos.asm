@@ -166,63 +166,6 @@ PintaBloque8Mask_SiguienteLinea
    ret
 
 ; ***********************************************************
-; PintaBloque8Transp: imprime sprite de 8 pixels de ancho con mascara
-; HL: destino en memoria de video
-; A: alto del bloque (8 para tiles, 16 para sprites)
-; DE: origen del sprite
-; Modifica: DE, BC, HL, A
-; ***********************************************************
-PintaBloque8Transp:
-         ex DE, HL   ; HL origen del sprite, DE destino en pantalla
-         ex AF, AF'  ; Preservamos A (alto del bloque)
-         
-         ; Desenrollamos la rutina de copiado de una linea (4 bytes)
-         ; Primer byte
-         ld      A, (DE)   ; Byte de pantalla en A
-         and     (HL)      ; AND con mascara
-         inc     HL        
-         or      (HL)      ; OR con sprite
-         inc     HL
-         ld      (DE), A   ; Vuelca byte en pantalla
-         inc     DE        ; Siguiente byte en sprite         
-         ; Segundo byte
-         ld      A, (DE)   ; Byte de pantalla en A
-         and     (HL)      ; AND con mascara
-         inc     HL        
-         or      (HL)      ; OR con sprite
-         inc     HL
-         ld      (DE), A   ; Vuelca byte en pantalla
-         inc     DE        ; Siguiente byte en sprite         
-         ; Tercer byte
-         ld      A, (DE)   ; Byte de pantalla en A
-         and     (HL)      ; AND con mascara
-         inc     HL        
-         or      (HL)      ; OR con sprite
-         inc     HL
-         ld      (DE), A   ; Vuelca byte en pantalla
-         inc     DE        ; Siguiente byte en sprite         
-         ; Cuarto byte
-         ld      A, (DE)   ; Byte de pantalla en A
-         and     (HL)      ; AND con mascara
-         inc     HL        
-         or      (HL)      ; OR con sprite
-         inc     HL
-         ld      (DE), A   ; Vuelca byte en pantalla
-         inc     DE        ; Siguiente byte en sprite                  
-         
-         ld BC, &7FC ; Primer pixel de la siguiente linea (&800 - 4 bytes) 
-         ex DE, HL   ; Ahora, destino en memoria de video en HL
-         add HL, BC
-         jr NC, PintaBloque8Transp_SiguienteLinea
-         ld BC, &C050
-         add HL, BC
-PintaBloque8Transp_SiguienteLinea
-         ex AF, AF'  ; Recuperamos el contador de lineas
-         dec A
-         jr NZ, PintaBloque8Transp
-         ret
-
-; ***********************************************************
 ; PintaObjetos: coloca en la memoria de video los objetos
 ; almacenados en el array PANTALLA_ACTUAL_OBJETOS
 ; con formato (visible,X,Y,tipo) hasta un maximo de MAX_OBJETOS

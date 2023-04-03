@@ -1,4 +1,7 @@
 ; Data created with Img2CPC - (c) Retroworks - 2007-2015
+Enemigotileset:
+DEFW Enemigo_00, Enemigo_01, Enemigo_02, Enemigo_03, Enemigo_04, Enemigo_05, Enemigo_06, Enemigo_07, Enemigo_08, Enemigo_09, Enemigo_10, Enemigo_11, Enemigo_12, Enemigo_13, Enemigo_14, Enemigo_15, Enemigo_16, Enemigo_17, Enemigo_18, Enemigo_19, Enemigo_20, Enemigo_21, Enemigo_22, Enemigo_23, Enemigo_24, Enemigo_25, Enemigo_26, Enemigo_27, Enemigo_28, Enemigo_29, Enemigo_30, Enemigo_31
+
 ; Tile Enemigo_00 - 8x16 pixels, 4x16 bytes.
 Enemigo_00:
 DEFB #00, #50, #f0, #00
@@ -533,77 +536,77 @@ DEFB #00, #c0, #c0, #00
 
 ; Tile Enemigo_28 - 8x16 pixels, 4x16 bytes.
 Enemigo_28:
-DEFB #00, #00, #00, #00
-DEFB #00, #00, #00, #00
-DEFB #00, #00, #00, #00
-DEFB #00, #00, #00, #00
-DEFB #00, #00, #00, #00
-DEFB #00, #00, #00, #00
-DEFB #00, #00, #00, #00
-DEFB #00, #00, #00, #00
-DEFB #00, #00, #00, #00
-DEFB #00, #00, #00, #00
-DEFB #00, #00, #00, #00
-DEFB #00, #00, #00, #00
-DEFB #00, #00, #00, #00
-DEFB #00, #00, #00, #00
-DEFB #00, #00, #00, #00
-DEFB #00, #00, #00, #00
+DEFB #20, #00, #00, #10
+DEFB #00, #05, #00, #00
+DEFB #00, #20, #00, #20
+DEFB #00, #20, #20, #00
+DEFB #20, #30, #1a, #00
+DEFB #10, #1a, #1a, #20
+DEFB #10, #0f, #a5, #20
+DEFB #25, #5a, #a5, #20
+DEFB #25, #5a, #f0, #1a
+DEFB #25, #f0, #f0, #b0
+DEFB #25, #f0, #f0, #b0
+DEFB #25, #f0, #f0, #1a
+DEFB #25, #f0, #f0, #1a
+DEFB #10, #f0, #f0, #20
+DEFB #10, #5a, #b0, #20
+DEFB #00, #70, #b0, #00
 
 ; Tile Enemigo_29 - 8x16 pixels, 4x16 bytes.
 Enemigo_29:
-DEFB #00, #00, #00, #00
-DEFB #00, #00, #00, #00
-DEFB #00, #00, #00, #00
-DEFB #00, #00, #00, #00
-DEFB #00, #00, #00, #00
-DEFB #00, #00, #00, #00
-DEFB #00, #00, #00, #00
-DEFB #00, #00, #00, #00
-DEFB #00, #00, #00, #00
-DEFB #00, #00, #00, #00
-DEFB #00, #00, #00, #00
-DEFB #00, #00, #00, #00
-DEFB #00, #00, #00, #00
-DEFB #00, #00, #00, #00
-DEFB #00, #00, #00, #00
-DEFB #00, #00, #00, #00
+DEFB #00, #00, #20, #00
+DEFB #00, #00, #00, #0a
+DEFB #00, #20, #20, #00
+DEFB #05, #10, #20, #05
+DEFB #00, #05, #1a, #00
+DEFB #00, #25, #b0, #00
+DEFB #10, #25, #a5, #10
+DEFB #10, #5a, #a5, #10
+DEFB #10, #5a, #a5, #20
+DEFB #30, #5a, #f0, #1a
+DEFB #25, #f0, #f0, #1a
+DEFB #25, #f0, #f0, #b0
+DEFB #25, #f0, #f0, #b0
+DEFB #25, #5a, #f0, #30
+DEFB #10, #5a, #f0, #20
+DEFB #00, #70, #b0, #00
 
 ; Tile Enemigo_30 - 8x16 pixels, 4x16 bytes.
 Enemigo_30:
-DEFB #00, #00, #00, #00
-DEFB #00, #00, #00, #00
-DEFB #00, #00, #00, #00
-DEFB #00, #00, #00, #00
-DEFB #00, #00, #00, #00
-DEFB #00, #00, #00, #00
-DEFB #00, #00, #00, #00
-DEFB #00, #00, #00, #00
-DEFB #00, #00, #00, #00
-DEFB #00, #00, #00, #00
-DEFB #00, #00, #00, #00
-DEFB #00, #00, #00, #00
-DEFB #00, #00, #00, #00
-DEFB #00, #00, #00, #00
-DEFB #00, #00, #00, #00
-DEFB #00, #00, #00, #00
+DEFB #20, #00, #00, #10
+DEFB #00, #05, #00, #00
+DEFB #00, #20, #00, #20
+DEFB #00, #20, #20, #00
+DEFB #20, #30, #1a, #00
+DEFB #10, #1a, #1a, #20
+DEFB #10, #0f, #a5, #20
+DEFB #25, #5a, #a5, #20
+DEFB #25, #5a, #f0, #1a
+DEFB #25, #f0, #f0, #b0
+DEFB #25, #f0, #f0, #b0
+DEFB #25, #f0, #f0, #1a
+DEFB #25, #f0, #f0, #1a
+DEFB #10, #f0, #f0, #20
+DEFB #10, #5a, #b0, #20
+DEFB #00, #70, #b0, #00
 
 ; Tile Enemigo_31 - 8x16 pixels, 4x16 bytes.
 Enemigo_31:
-DEFB #00, #00, #00, #00
-DEFB #00, #00, #00, #00
-DEFB #00, #00, #00, #00
-DEFB #00, #00, #00, #00
-DEFB #00, #00, #00, #00
-DEFB #00, #00, #00, #00
-DEFB #00, #00, #00, #00
-DEFB #00, #00, #00, #00
-DEFB #00, #00, #00, #00
-DEFB #00, #00, #00, #00
-DEFB #00, #00, #00, #00
-DEFB #00, #00, #00, #00
-DEFB #00, #00, #00, #00
-DEFB #00, #00, #00, #00
-DEFB #00, #00, #00, #00
-DEFB #00, #00, #00, #00
+DEFB #00, #00, #20, #00
+DEFB #00, #00, #00, #0a
+DEFB #00, #20, #20, #00
+DEFB #05, #10, #20, #05
+DEFB #00, #05, #1a, #00
+DEFB #00, #25, #b0, #00
+DEFB #10, #25, #a5, #10
+DEFB #10, #5a, #a5, #10
+DEFB #10, #5a, #a5, #20
+DEFB #30, #5a, #f0, #1a
+DEFB #25, #f0, #f0, #1a
+DEFB #25, #f0, #f0, #b0
+DEFB #25, #f0, #f0, #b0
+DEFB #25, #5a, #f0, #30
+DEFB #10, #5a, #f0, #20
+DEFB #00, #70, #b0, #00
 

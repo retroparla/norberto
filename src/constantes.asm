@@ -128,14 +128,16 @@ ENEMIGO_SEN                EQU   5
 ENEMIGO_VEL                EQU   6
 ENEMIGO_RATE               EQU   7
 ENEMIGO_ANIM               EQU   8
-ENEMIGO_NUM_ANIM           EQU   10
-ENEMIGO_DESP_ACT           EQU   11
-ENEMIGO_SEN_ACT            EQU   12
-ENEMIGO_RATE_ACT           EQU   13
-ENEMIGO_NUM_FRAME          EQU   14
-ENEMIGO_FRAME              EQU   15
-ENEMIGO_POSX_PREV          EQU   17
-ENEMIGO_POSY_PREV          EQU   18
+ENEMIGO_DESP_ACT           EQU   10
+ENEMIGO_SEN_ACT            EQU   11
+ENEMIGO_RATE_ACT           EQU   12
+ENEMIGO_NUM_FRAME          EQU   13
+ENEMIGO_FRAME              EQU   14
+ENEMIGO_POSX_PREV          EQU   16
+ENEMIGO_POSY_PREV          EQU   17
+
+; 2 frames por enemigo por sentido (valor fijo)
+ENEMIGOS_NUM_ANIM          EQU   2
 
 TAM_ENEMIGO         EQU 19       ; Ver enemigos.asm para estructura de enemigos en el buffer
 TAM_ENEMIGO_DEF     EQU 8        ; Tam de la definicion de enemigos

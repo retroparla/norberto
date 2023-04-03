@@ -6,7 +6,7 @@ PALETA="17,26,16,11,6,24,9,25,4,3,15,18,1,20,13,0"
 img2cpc -fwp $PALETA -of asm -m 0 -o src/gJugadores -abn -bn Jugador -nt -h 16 -w 8 data/jugadores.png
 
 # Genera el asm correspondiente a los enemigos
-img2cpc -fwp $PALETA -of asm -m 0 -o src/gEnemigos -abn -bn Enemigo -nt -h 16 -w 8 data/enemigos.png
+img2cpc -fwp $PALETA -of asm -m 0 -o src/gEnemigos -abn -bn Enemigo -h 16 -w 8 data/enemigos.png
 
 # Genera el asm correspondiente a los tiles del escenario
 img2cpc -fwp $PALETA -of asm -m 0 -o src/gTiles -abn -bn Tile -h 8 -w 8 data/tiles.png

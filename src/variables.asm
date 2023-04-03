@@ -56,8 +56,6 @@ ENEMIGOS DS MAX_ENEMIGOS * TAM_ENEMIGO
 ; Punteros a los frames de cada tipo de enemigo
 ENEMIGOS_ANIM DW Enemigo_00, Enemigo_04, Enemigo_08, Enemigo_12 
               DW Enemigo_16, Enemigo_20, Enemigo_24 ; .... ampliar cada vez que se diseñe un enemigo nuevo
-; Numero de animaciones de cada tipo de enemigo
-ENEMIGOS_NUM_ANIM DB 2, 2, 2, 2, 2, 2, 2 ; .... ampliar cada vez que se diseñe un enemigo nuevo
 
 CICLO_SALTO DB 0, 8, 8, 4, 4, 4, 0  ; 
 
