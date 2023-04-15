@@ -26,6 +26,9 @@ TEXTO_HARD DB "HARD", 101, 101, 101, 102, 92, 91, &FF
 TEXTO_SOFT DB "SOFT", 101, 101, 101, 102, 94, 91, &FF
 TEXTO_X  DB "X", &FF
 
+TEXTO_INICIO DB "PULSA", 101, "UNA", 101, "TECLA", &FF
+TEXTO_FIN DB "FINAL", 101, "DEL", 101, "JUEGO", &FF
+
 ; Estado de los personajes
 
 ; Jugador 1

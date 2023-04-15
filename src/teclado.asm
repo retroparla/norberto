@@ -1,5 +1,5 @@
 ; LeerTeclado: rellena el array TECLADO con el estado completo de las teclas
-LeerTeclado:
+LeerTecladoCompleto:
    ;;;;;; di
    ld HL, MAPA_TECLADO
    ld BC, &F782
@@ -16,18 +16,23 @@ LeerTeclado:
    out (C), C
    ld A, &40
    ld C, &4a
-LeerTeclado_Bucle:
+LeerTecladoCompleto_Bucle:
    ld B, D
    out (C), A
    ld B, E
    ini
    inc A
    cp C
-   jr C, LeerTeclado_Bucle
+   jr C, LeerTecladoCompleto_Bucle
    ld BC, &F782
    out (C), C
    ;;;;;; ei
+   ret
 
+; Lee el estado de las teclas del juego
+LeerTeclado:
+   ; Rellena MAPA_TECLADO con el estado de todas las teclas
+   call LeerTecladoCompleto
    ; Chequea la pulsacion de las teclas del juego
    ld HL, MAPA_TECLADO     ; Inicio del array de teclas
    ld D, 0                ; Reseteamos bits de pulsaciones
@@ -116,4 +121,22 @@ LeerTeclado_JOY_LEFT:
 LeerTeclado_Fin:
    ld A, D
    ld (TECLAS_PULSADAS), A   ; Guarda estado de teclas en RAM
+   ret
+
+; Bucle hasta que se pulsa una tecla
+EsperaTecla:
+   ; Rellena MAPA_TECLADO
+   call LeerTecladoCompleto
+   ; Busca en MAPA_TECLADO alguna tecla pulsada (0)
+   ; MAPA_TECLADO son 10 bytes (80 teclas, un bit por tecla). 
+   ; Si no hay ninguna tecla pulsada, los 10 bytes valdrian &FF
+   ld HL, MAPA_TECLADO
+   ld B, 10    ; Leemos 10 bytes
+EsperaTecla_Bucle:
+   ld A, (HL)
+   cp &FF
+   ret NZ   ; Distinto de &FF, salimos
+   inc HL
+   djnz EsperaTecla_Bucle
+   jp EsperaTecla ; Nueva lectura de teclado
    ret

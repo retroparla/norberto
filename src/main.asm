@@ -25,6 +25,11 @@ InicioCodigo:
    ld A, &54
    call ColorBorde
 
+   ; Entramos en el menu principal
+   ; No saldremos de aquí hasta que el jugador 
+   ; comience una nueva partida
+   call PantallaInicio
+
    ; Textos estaticos del marcador
    call PintaMarcadorEstatico
 
@@ -120,4 +125,6 @@ INCLUDE "personajes.asm"
 INCLUDE "enemigos.asm"
 INCLUDE "interrupciones.asm"
 INCLUDE "marcador.asm"
+INCLUDE "pantallaInicio.asm"
+INCLUDE "pantallaFin.asm"
 INCLUDE "variables.asm"

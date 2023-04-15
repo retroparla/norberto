@@ -35,3 +35,6 @@ Historial de cambios
 
 02/04/2023:
    - Posibilidad de enemigos estáticos si desplazamiento=0 (ej. fuego).
+
+15/04/2023:
+   - Añadidos archivos para pantalla inicial y final del juego.
