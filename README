@@ -38,3 +38,7 @@ Historial de cambios
 
 15/04/2023:
    - Añadidos archivos para pantalla inicial y final del juego.
+
+14/05/2023:
+   - Soporte inicial para musica (Arkos Player)
+   - Nuevo ensamblador (rasm), implica cambios en la sintaxis de los numeros hexadecimales (# en lugar de &)

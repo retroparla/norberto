@@ -1,7 +1,7 @@
 ; Muestra la pantalla al finalizar el juego
 PantallaFin:
    ; Borra todo
-   ld A, &FF   ; Negro, pen 15
+   ld A, #FF   ; Negro, pen 15
    call LimpiaPantalla
 
    ; Mensaje de fin

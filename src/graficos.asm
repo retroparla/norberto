@@ -12,10 +12,10 @@ TablaScanlines_Bucle:
    ld (IX+1), H
    inc IX
    inc IX
-   ld BC, &800             ; Siguiente linea
+   ld BC, #800             ; Siguiente linea
    add HL, BC              
    jr NC, TablaScanlines_SigLinea   
-   ld BC, &C050
+   ld BC, #C050
    add HL, BC
 TablaScanlines_SigLinea:
    dec A
@@ -70,10 +70,10 @@ PintaFondo8:
          ldi         
          ldi   
          ex DE, HL
-         ld BC, &7FC       ; HL = HL + 7FC (&800 - 4 bytes) (primer pixel de la siguiente linea)
+         ld BC, #7FC       ; HL = HL + 7FC (#800 - 4 bytes) (primer pixel de la siguiente linea)
          add HL, BC
          jr NC, PintaFondo8_SigLinea
-         ld BC, &C050
+         ld BC, #C050
          add HL, BC        ; Cambio de linea de caracteres: acualizamos DE y HL
 PintaFondo8_SigLinea:
          dec A
@@ -93,11 +93,11 @@ PintaBloque8:
          ldi
          ldi
          ldi
-         ld BC, &7FC ; Primer pixel de la siguiente linea (&800 - 4 bytes) 
+         ld BC, #7FC ; Primer pixel de la siguiente linea (#800 - 4 bytes) 
          ex DE, HL   ; Ahora, destino en memoria de video en HL
          add HL, BC
          jr NC, PintaBloque8_SiguienteLinea
-         ld BC, &C050
+         ld BC, #C050
          add HL, BC
 PintaBloque8_SiguienteLinea
          dec A
@@ -154,10 +154,10 @@ PintaBloque8Mask:
    inc DE       ; Siguiente byte en sprite
    inc HL       ; Siguiente pixel en pantalla      
 
-   ld BC, &7FC ; Primer pixel de la siguiente linea (&800 - 4 bytes) 
+   ld BC, #7FC ; Primer pixel de la siguiente linea (#800 - 4 bytes) 
    add HL, BC
    jr NC, PintaBloque8Mask_SiguienteLinea
-   ld BC, &C050
+   ld BC, #C050
    add HL, BC
 PintaBloque8Mask_SiguienteLinea
    ex AF, AF'  ; Recuperamos contador de lineas
@@ -175,7 +175,7 @@ PintaObjetos:
       ld IX, (PANTALLA_ACTUAL_OBJETOS)      ; Objetos de la pantalla
 PintaObjetos_Bucle:
       ld A, (IX+0)            ; Visible/Invisible o fin de array
-      cp &FF
+      cp #FF
       ret Z                   ; Fin de array, salimos
       cp 0                    ; Objeto invisible, lo saltamos
       jr Z, PintaObjeto_SigObjeto
@@ -217,7 +217,7 @@ PintaPantalla:
       ;xor A             ; Nos saltamos el tile 0 (vacio)
       ;cp E
       ;jp Z, PintaPantalla_SigTile
-      ld A, &FF         ; Byte de fin de pantalla
+      ld A, #FF         ; Byte de fin de pantalla
       cp E
       ret Z              ; Salir de la rutina, pantalla terminada
       ld IY, Tiletileset     ; IY apunta al inicio de la tabla de tiles
@@ -243,7 +243,7 @@ PintaPantalla_SigTile:
 ; C: coordenada Y (en scanlines, 0..199)
 ; HL: puntero a la definicion de la pantalla
 ; Salida:
-; A: tipo de bloque en esa posicion (&FF si fuera de la pantalla)
+; A: tipo de bloque en esa posicion (#FF si fuera de la pantalla)
 ; Modifica A,BC,DE,HL
 ; ***********************************************************
 BloqueXY:
@@ -251,7 +251,7 @@ BloqueXY:
       ; B > 200?
       ld A, B
       add A, 56
-      ld A, &FF
+      ld A, #FF
       jr NC, Sigue
       ret
 Sigue:
@@ -299,9 +299,9 @@ Sigue:
 ; Modifica: BC
 ; ***********************************************************
 ColorBorde:
-      ld BC, &7F10
+      ld BC, #7F10
       out (C), C  ; Seleccion borde en gate array 
-      out (C), A  ; Puerto &7F40 + color
+      out (C), A  ; Puerto #7F40 + color
       ret
 
 ; ***********************************************************
@@ -311,9 +311,9 @@ ColorBorde:
 ; Modifica: BC
 ; ***********************************************************
 ColorPaleta:
-      ld BC, &7F00   ; Pen selection en gate array
-      out (C), D     ; &7F00 + pen number
-      out (C), E     ; &7F40 + color number
+      ld BC, #7F00   ; Pen selection en gate array
+      out (C), D     ; #7F00 + pen number
+      out (C), E     ; #7F40 + color number
       ret
 
 ; ***********************************************************
@@ -340,9 +340,9 @@ ColoresPaleta_Loop:
 ; Modifica: BC
 ; ***********************************************************
 ModoPantalla:
-      ld BC, &7F8C   ; Upper&Lower ROM disabled
+      ld BC, #7F8C   ; Upper#Lower ROM disabled
       add A, C
-      out (C), A  ; &7F8C + modo pantalla
+      out (C), A  ; #7F8C + modo pantalla
       ret
 
 ; ***********************************************************
@@ -354,7 +354,7 @@ LimpiaPantalla:
       ld HL, MEM_VIDEO
       ld E, L
       ld D, H
-      inc DE         ; DE = HL + 1 (&C001)
+      inc DE         ; DE = HL + 1 (#C001)
       ld (HL), A     ; Byte a volcar en pantalla
       ld BC, MEM_VIDEO_TAM - 1 ; 16Kb - 1 (porque DE va uno por delante)
       ldir           ; Copia de HL (que siempre es 0) a DE (que es HL+1)
@@ -364,7 +364,7 @@ LimpiaPantalla:
 ; VSync: espera al comienzo del retrazo vertical
 ; ***********************************************************
 VSync:
-      ld B, &F5            ;; PPI port B input
+      ld B, #F5            ;; PPI port B input
 VSync_Bucle:
       in A, (C)            ;; [4] read PPI port B input
                            ;; (bit 0 = "1" if vsync is active,
@@ -380,16 +380,16 @@ VSync_Bucle:
 ; Input: 
 ; IX: puntero a los datos del jugador
 ; Output: 
-; A: objeto con el que ha colisionado o &FF si ninguno
+; A: objeto con el que ha colisionado o #FF si ninguno
 ; ***********************************************************
 
 CapturaObjetos:
       ld IY, (PANTALLA_ACTUAL_OBJETOS)
 CapturaObjetos_Bucle:
       ld A, (IY+0)      ; Objeto invisible o fin de lista?
-      cp &FF
+      cp #FF
       ret Z             ; Hemos recorrido toda la lista de objetos, fin
-      cp &0             ; Objeto invisible, lo saltamos
+      cp #0             ; Objeto invisible, lo saltamos
       jr Z, CapturaObjetos_Siguiente
       call ColisionObjeto
       ; Si Carry, no colision y pasamos al siguiente
@@ -435,8 +435,8 @@ CapturaObjetos_Bucle:
       ld C, (IY+2)      ; Coordenada Y (0..199)
       ld HL, PANTALLA_ACTUAL
       call BloqueXY     ; Obtenemos en A el tipo de bloque que ocupa esa posicion
-                        ; o &FF si esta fuera de la pantalla
-      cp &FF            ; No deberia pasar...
+                        ; o #FF si esta fuera de la pantalla
+      cp #FF            ; No deberia pasar...
       ret Z
 
       ld HL, Tiletileset ; Lista de tiles, avanzamos hasta el tile A

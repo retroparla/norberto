@@ -10,7 +10,7 @@ Interrupcion0:
 
       ; Prepara la siguiente interrupcion
       ld BC, Interrupcion1
-      ld (&39), BC
+      ld (#39), BC
 
       ;ld A, COLOR_BRIGHT_YELLOW
       ;call ColorBorde
@@ -128,7 +128,7 @@ Interrupcion1:
 
       ; Prepara la siguiente interrupcion
       ld BC, Interrupcion2
-      ld (&39), BC
+      ld (#39), BC
 
       ;ld A, COLOR_BRIGHT_WHITE
       ;call ColorBorde
@@ -152,6 +152,9 @@ Interrupcion1:
       ld (IX+SPRITE_ESTADO_PREV), A ; Guardamos el estado antes de actualizarlo
       call CalculaEstado
 
+      ; Reproduce la musica
+      call PLY_AKM_Play
+
       pop AF
       pop BC
       pop DE
@@ -171,7 +174,7 @@ Interrupcion2:
 
       ; Prepara la siguiente interrupcion
       ld BC, Interrupcion3
-      ld (&39), BC
+      ld (#39), BC
 
       ;ld A, COLOR_BRIGHT_RED
       ;call ColorBorde
@@ -226,20 +229,20 @@ Interrupcion3:
 
       ; Prepara la siguiente interrupcion
       ld BC, Interrupcion4
-      ld (&39), BC
+      ld (#39), BC
 
       ;ld A, COLOR_GREEN
       ;call ColorBorde
 
       ; Borde negro otra vez (para el efecto de perder una vida)
-      ld A, &54
+      ld A, #54
       call ColorBorde   
 
       ; Comprobamos si el jugador 1 ha cogido
       ; algun objeto del escenario
       ld IX, PLAYER1
       call CapturaObjetos
-      cp &FF      ; Nada?
+      cp #FF      ; Nada?
       jr Z, Interrupcion3_ChoqueEnemigosP1
       ; Objeto hardware o software?
       ; En A se devuelve el tipo del objeto.
@@ -268,7 +271,7 @@ Interrupcion3_ChoqueEnemigosP1:
       cp 1
       jr Z, Interrupcion3_Fin    ; Esta congelado, comprobamos si lo descongelan
       call ChoqueEnemigos                 ; No esta congelado, comprobamos choques con enemigos
-      cp &FF      ; Nada
+      cp #FF      ; Nada
       jr Z, Interrupcion3_Fin
       ; WASTED!!
       ld A, 1
@@ -304,7 +307,7 @@ Interrupcion4:
 
       ; Prepara la siguiente interrupcion
       ld BC, Interrupcion5
-      ld (&39), BC
+      ld (#39), BC
 
       ;ld A, COLOR_BLACK
       ;call ColorBorde
@@ -368,7 +371,7 @@ Interrupcion5:
 
       ; Prepara la siguiente interrupcion
       ld BC, Interrupcion0
-      ld (&39), BC
+      ld (#39), BC
 
       ;ld A, COLOR_BRIGHT_BLUE
       ;call ColorBorde

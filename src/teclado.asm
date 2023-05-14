@@ -2,20 +2,20 @@
 LeerTecladoCompleto:
    ;;;;;; di
    ld HL, MAPA_TECLADO
-   ld BC, &F782
+   ld BC, #F782
    out (C), C
-   ld BC, &F40E
+   ld BC, #F40E
    ld E, B
    out (C), C
-   ld BC, &F6C0
+   ld BC, #F6C0
    ld D, B
    out (C),C
    ld C, 0
    out (C), C
-   ld BC, &F792
+   ld BC, #F792
    out (C), C
-   ld A, &40
-   ld C, &4a
+   ld A, #40
+   ld C, #4a
 LeerTecladoCompleto_Bucle:
    ld B, D
    out (C), A
@@ -24,7 +24,7 @@ LeerTecladoCompleto_Bucle:
    inc A
    cp C
    jr C, LeerTecladoCompleto_Bucle
-   ld BC, &F782
+   ld BC, #F782
    out (C), C
    ;;;;;; ei
    ret
@@ -129,13 +129,13 @@ EsperaTecla:
    call LeerTecladoCompleto
    ; Busca en MAPA_TECLADO alguna tecla pulsada (0)
    ; MAPA_TECLADO son 10 bytes (80 teclas, un bit por tecla). 
-   ; Si no hay ninguna tecla pulsada, los 10 bytes valdrian &FF
+   ; Si no hay ninguna tecla pulsada, los 10 bytes valdrian #FF
    ld HL, MAPA_TECLADO
    ld B, 10    ; Leemos 10 bytes
 EsperaTecla_Bucle:
    ld A, (HL)
-   cp &FF
-   ret NZ   ; Distinto de &FF, salimos
+   cp #FF
+   ret NZ   ; Distinto de #FF, salimos
    inc HL
    djnz EsperaTecla_Bucle
    jp EsperaTecla ; Nueva lectura de teclado

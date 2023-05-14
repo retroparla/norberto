@@ -64,7 +64,7 @@ ActualizaMarcador:
     ; Obtenemos el sprite del segundo digito
     ;ld A, (IX+SPRITE_PUNTOS)   ; Puntos en BCD
     pop AF
-    and &0F    ; Sacamos el segundo digito con una mascara 00001111
+    and #0F    ; Sacamos el segundo digito con una mascara 00001111
     ld B, 0
     ld C, A
     ld IY, Marcadortileset    ; Indice sobre la lista de sprites

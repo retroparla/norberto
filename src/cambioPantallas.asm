@@ -10,14 +10,14 @@ DescomprimePantallaActual:
 DescomprimePantallaActual_Bucle:
    ld B, 1        ; Contador de repeticiones (1 por defecto)
    ld A, (HL)
-   cp &FF         ; Fin de pantalla?
+   cp #FF         ; Fin de pantalla?
    jp NZ, DescomprimePantallaActual_NoFin
-   ld (DE), A     ; Copiamos el &FF para indicar fin de pantalla
+   ld (DE), A     ; Copiamos el #FF para indicar fin de pantalla
    jp DescomprimePantallaActual_Objetos   ; Lee la definicion de objetos
 DescomprimePantallaActual_NoFin:
-   cp &80         ; Tile < 80? No hay repeticion, se vuelca un unico tile
+   cp #80         ; Tile < 80? No hay repeticion, se vuelca un unico tile
    jp C, DescomprimePantallaActual_Rep
-   sub &80        ; A = A-80, calculamos el ID real del tile
+   sub #80        ; A = A-80, calculamos el ID real del tile
    inc HL         ; El siguiente byte es el numero de repeticiones
    ld B, (HL)     ; Contador de repeticiones en B
 DescomprimePantallaActual_Rep:
@@ -33,12 +33,12 @@ DescomprimePantallaActual_Objetos:
    ; de la pantalla, es decir, donde se ha quedado HL + 1
    inc HL
    ld (PANTALLA_ACTUAL_OBJETOS), HL
-   ; La lista de objetos termina con un &FF.
+   ; La lista de objetos termina con un #FF.
    ; Avanzamos HL hasta encontrarlo.
    ld B, 0  ; Numero de objetos en esta pantalla
 DescomprimePantallaActual_BuscaEnemigos:
    ld A, (HL)
-   cp &FF   ; Fin de lista?
+   cp #FF   ; Fin de lista?
    jp Z, DescomprimePantallaActual_Enemigos
    inc HL   ; Bit de visibilidad
    inc HL   ; Posicion X
@@ -50,7 +50,7 @@ DescomprimePantallaActual_Enemigos:
    ld A, B
    ld (NUM_OBJETOS), A  ; Guardamos el numero de objetos
    ; La lista de enemigos empieza en el siguiente
-   ; byte tras el &FF de los objetos.
+   ; byte tras el #FF de los objetos.
    ; Guardamos la direccion en PANTALLA_ACTUAL_ENEMIGOS
    inc HL
    ld (PANTALLA_ACTUAL_ENEMIGOS), HL

@@ -1,9 +1,9 @@
-; Muestra una cadena de texto terminada en &FF
+; Muestra una cadena de texto terminada en #FF
 ; HL: posicion de memoria de video donde se muestra
 ; BC: puntero al inicio de la cadena
 PintaTexto:
    ld A, (BC)     ; Letra en BC
-   cp &FF
+   cp #FF
    ret Z          ; Fin de cadena
 
    sub 65

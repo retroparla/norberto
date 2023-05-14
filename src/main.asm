@@ -1,4 +1,7 @@
-org   &100 
+org   #100 
+
+; Configuracion del Arkos player
+PLY_AKM_HARDWARE_CPC = 1
 
 INCLUDE "constantes.asm"
 
@@ -6,8 +9,8 @@ InicioCodigo:
    di ; Deshabilita interrupciones y el firmware del CPC
 
    ld SP, TABLA_MASCARAS      ; Pila debajo de la tabla de mascaras
-   ld BC, &C9FB      ; 0038 EI + RET
-   ld (&38), BC
+   ld BC, #C9FB      ; 0038 EI + RET
+   ld (#38), BC
  
    ; Inicializacion paleta, borde, modo de video
    ld HL, PALETA
@@ -19,11 +22,16 @@ InicioCodigo:
    ld A, 0  
    call ModoPantalla
 
-   ld A, &FF   ; Negro, pen 15
+   ld A, #FF   ; Negro, pen 15
    call LimpiaPantalla
 
-   ld A, &54
+   ld A, #54
    call ColorBorde
+
+   ; Inicializa musica
+   ld HL, MusicStart
+   xor a   ; Subsong 0
+   call PLY_AKM_Init
 
    ; Entramos en el menu principal
    ; No saldremos de aquí hasta que el jugador 
@@ -84,10 +92,10 @@ IniciaJuego:
    ; justo después del VSync
    call VSync
    ;di
-   ld A, &C3         ; JP
-   ld (&38), A       ; 0038 JP
+   ld A, #C3         ; JP
+   ld (#38), A       ; 0038 JP
    ld HL, Interrupcion0      
-   ld (&39), HL      ; 0038 JP Int0
+   ld (#39), HL      ; 0038 JP Int0
    ei
 
 Loop: 
@@ -127,4 +135,8 @@ INCLUDE "interrupciones.asm"
 INCLUDE "marcador.asm"
 INCLUDE "pantallaInicio.asm"
 INCLUDE "pantallaFin.asm"
+INCLUDE "musica_playerconfig.asm"
+INCLUDE "PlayerAkm.asm"
+MusicStart:
+INCLUDE "musica.asm"
 INCLUDE "variables.asm"

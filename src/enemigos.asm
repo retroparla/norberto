@@ -321,7 +321,7 @@ ActualizaEnemigos_SigueBucle:
 ; tocando a algun enemigo
 ; IX: puntero a los datos del jugador
 ; Output: 
-; A: enemigo con el que ha colisionado o &FF si ninguno
+; A: enemigo con el que ha colisionado o #FF si ninguno
 ; ***********************************************************
 
 ChoqueEnemigos:
@@ -345,5 +345,5 @@ ChoqueEnemigos_Siguiente:
       pop BC
       djnz ChoqueEnemigos_Bucle
 ChoqueEnemigos_Fin:
-      ld A, &FF
+      ld A, #FF
       ret
